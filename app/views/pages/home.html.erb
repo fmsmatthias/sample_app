@@ -1,0 +1,51 @@
+<h1>Welcome to Biot</h1>
+<br>
+<br>
+<div class="span8 offset2">
+  <%= image_tag("intro_biot.jpg", :height => '420', :width => '420') %>
+</div>
+<div class="row">
+<div class="span2 offset2">
+<strong>
+<br>
+Learn more about the beautiful village of Biot at the cote
+d'azur closed to the sea
+</strong>
+</div>
+
+<div class="span2 ">
+<strong>
+<br>  
+Check out out our little apartment in the heart of the old village of Biot
+</strong>
+</div>
+
+<div class="span2">
+<strong>
+<br>  
+If you have an ongoing booking logon to your personal area 
+</strong>
+</p>
+</div>
+</div>
+<div class="row">
+<div class="span2 offset2">
+<br>  
+<%= link_to "Biot Village", ap2_path , class: "btn btn-large btn-primary" %>
+</div>
+<div class="span2">
+<br>  
+  <%= link_to "Apartment Info", ap1_path , class: "btn btn-large btn-primary" %>
+</div>
+
+<div class="span2">
+<br>  
+  <% if signed_in? %>
+  <%= link_to current_user.name, user_path(current_user) , class: "btn btn-large btn-primary" %>
+  <% else %>
+  <%= link_to "Your booking", signin_path , class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>
+</div>
+
+

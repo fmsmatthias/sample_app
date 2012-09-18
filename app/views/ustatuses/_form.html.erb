@@ -1,0 +1,20 @@
+<%= form_for(@ustatus) do |f| %>
+  <% if @ustatus.errors.any? %>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Status %><br />
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :Date %><br />
+    <%= f.number_field :sdate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

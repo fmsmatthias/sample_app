@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="span7 offset2">
+
+<%= form_for(@address) do |f| %>
+
+         <%= f.hidden_field :user_id %>
+
+        <%= f.label :FirstName  %>
+        <%= f.text_field :fname %> 
+        <br>
+        <%= f.label :LastName  %>
+        <%= f.text_field :lname %> 
+        <br>
+        <%= f.label :Street  %>
+        <%= f.text_field :streetno %> 
+        <br>
+        <%= f.label :city %>
+        <%= f.text_field :city %>
+        <br>
+        <%= f.label :Zip %>
+        <%= f.text_field :zip %>
+        <br>
+        <%= f.label :Country %>
+        <%= f.text_field :country %>
+        <br>
+        <%= f.label :"Phone Number" %>
+        <%= f.text_field :phone1 %>
+        <br>
+       <%= f.label :"Mobile phone" %>
+       <%= f.text_field :phonem %>
+       <br>
+       <br>
+      <%= f.submit "Create Address", class: "btn btn-large btn-primary" %>
+      <%= link_to 'Back', @user %>
+<br>
+<% end %>
+
+  </div>    
+
+
+</div>    
+

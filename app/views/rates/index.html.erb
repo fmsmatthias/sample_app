@@ -1,0 +1,38 @@
+        <h2><b>Maintain rates for all apartments</b></h2>
+        <br />
+        <h3> apartment=1 Studio Nid de l'Airette</h3>
+        <br />
+
+        <p> Season indicators in English </p>
+        <% @seasons.each do |season|  %>
+          <%=  season.season %>
+          <%=  season.text %>
+          <br>
+        <% end %>
+        <br><hr>
+        <table>
+          <tr>
+            <th>Apartment</th>
+            <th>Season</th>
+            <th>Price</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+
+          <% @rates.each do |rate| %>
+            <tr>
+              <td><%= rate.apartment %></td>
+              <td><%= rate.season %></td>
+              <td><%= rate.price %></td>
+              <td><%= link_to 'Show', rate %></td>
+              <td><%= link_to 'Edit', edit_rate_path(rate) %></td>
+              <td><%= link_to 'Destroy', rate, confirm: 'Are you sure?', method: :delete %></td>
+            </tr>
+         <% end %>
+        </table>
+
+    <br />
+
+    <%= link_to 'New Rate', new_rate_path %>
+ 

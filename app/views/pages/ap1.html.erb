@@ -1,0 +1,137 @@
+        <h2>Apartment Le Nid de l'Airette</h2>
+        <hr>
+<div class="row">
+ <div class="span10">
+The holiday apartment is located on the ground floor of a three-storey 'maison de village', overlooking the <%= link_to "Verrerie de Biot","http://www.verreriebiot.com" %>. The spacious and quiet square in front is still known under its former name, 'Place de l'Airette' which means something like 'little resting place'.  Even during peak season only a few tourists find their way here to enjoy a glance over the valley and the Verrerie.
+
+The foundations of the house are sunk into the volcanic rock of the hill, and were originally for a barn, constructed approximately 500 years ago. This explains the unusual thickness of the structural walls, which ensure that the apartment stays pleasantly cool and quiet during the summer months. 
+</div>
+</div>
+      <hr>
+
+      <div class="row">
+        <div class="span10">
+        <ul class="media-grid">
+          
+           <li><a><img src="/assets/Haus_total2.JPG"></a></li>
+           <li><a><img src="/assets/Sitzecke2.JPG"></a></li>
+           <li><a><img src="/assets/place_de_lairette_II.jpg"></a></li>
+         </ul>
+        </div>
+       </div>
+
+<hr>
+
+      <div class="row">
+<div class="span10">
+The apartment consists of a small bedroom (1.40m double bed), a bathroom with shower, toilet and wash basin, a living room with an integrated kitchenette.
+The total size is approx. 25m2 and comfortably accommodates two people. An additional person can sleep on the sofabed in the living room. A cot is available on demand.
+The satellite TV receives diverse channels in German, French and English.
+The open terrace in front of the studio is reserved for our guests: to relax after a day at the beach, to enjoy a "Pastis" before dinner, to read, or whatever pleases you.
+</div>
+</div>
+
+      <hr>
+
+      <div class="row">
+        <div class="span10">
+        <ul class="media-grid">
+          
+           <li><a><img src="/assets/studio_2.jpg"></a></li>
+           <li><a><img src="/assets/studio_3.jpg"></a></li>
+           <li><a><img src="/assets/studio_6.jpg"></a></li>
+         </ul>
+        </div>
+       </div>
+
+      <div class="row">
+        <div class="span10">
+        <ul class="media-grid">
+          
+           <li><a><img src="/assets/studio_4.jpg"></a></li>
+           <li><a><img src="/assets/studio_5.jpg"></a></li>
+           <li><a><img src="/assets/schlafzimmer.jpg"></a></li>
+         </ul>
+        </div>
+       </div>
+
+<hr>
+
+<div class="row">
+<div class="span10">
+Most appealing is the ideal location of the apartment. It is very quiet, and yet is in the heart of the village, where direct car access is not possible. When you arrive, you can unload your car close to the apartment.  Parking, however, is outside the village fortifications, where there are several free public parking areas to choose from.  The apartment is then reached after a few minutes walk through the old village itself.  
+
+In our opinion Biot is one of the loveliest villages on the Côte dAzur  despite its popularity it has maintained its charm and authenticity and it offers a lot of activities for locals and tourists in every season.
+</div>
+</div>
+
+<hr>
+
+<h2>Rental Fees</h2>
+
+<div class="row">
+  <div class="span10">
+
+  <% @rates.each do |rate|  %>
+    <%  season(rate.season) %>
+    <% @seasons.each do |season|  %>
+      <%=  rate.season %>
+      <%=  season.text %>
+      :
+      <%=  rate.price %>
+      Euros/day 
+      <br>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+
+
+<br><hr>
+
+<div class="row">
+        <div class="span10">
+During the main season the apartment is available on a weekly basis only. Arrival on Saturday after 3 p.m. and departure Saturday until 10 a.m. Throughout the rest of the year the rental period can be shorter (minimum 3 days).
+All prices include water, gas and bed linen. Electricity is charged extra if heating is needed. Final cleaning is obligatory and will be charged 30 Euros.
+Pets are welcome, but please contact us beforehand.
+</div>
+       </div>
+<br><hr>
+
+<div class="row">
+        <div class="span10">
+<h2>Booking</h2>
+Please send us an e-mail with your inquiry or just give us a call.
+<br>
+To validate your reservation we ask for a down payment of 25% of the total rental fee via bank transfer within 10 days after confirmation. The balance is due a few days before your arrival date. 
+The security deposit is 150 Euros, which is reimbursed at the end of your stay.
+</div>
+       </div>
+<br><hr>
+
+<div class="row">
+        <div class="span10">
+<h2>Attention</h2>
+Please be aware that you cannot park your car directly in front of the apartment, but only on the public parking outside the village, from where you walk uphill for 3 minutes.
+<br></br>
+
+        </div>
+       </div>
+
+
+
+<div class="row">
+        <div class="span10">
+        <ul class="media-grid">
+          
+           <li><a><img src="/assets/montage_4.jpg"></a></li>
+   
+         </ul>
+        </div>
+       </div>
+
+<%= link_to "Home", root_path%>
+
+
+
+

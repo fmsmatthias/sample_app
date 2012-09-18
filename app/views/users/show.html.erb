@@ -1,0 +1,232 @@
+<% provide(:title, @user.name) %>
+    <section>
+      <h1>
+        Hello 
+        <%= @user.name %>
+      </h1>
+      <br>
+      <br>
+
+    <ul class="nav nav-tabs" id="FMStab">
+    <li class="active"><a href="#person">Personal Data</a></li>
+    <li><a href="#booking">Your Booking</a></li>
+    <li><a href="#history">Booking History</a></li>
+    </ul>
+
+
+<div class="tab-content">
+
+
+<div class="tab-pane active" id="person">
+  <br>
+  <div class="fms2">
+    <% if @address.nil? %>
+           <p>your address is not maintained, please maintain address here</p>
+           <br><br><br>
+           <%= link_to "Create Address", edit_address_path , class: "btn btn btn-primary" %>
+    <% else %>
+         <h3>Your Personal Data:</h3>
+         <br>
+
+         <div class="row"> 
+
+           <div class="span2">
+             <p><strong>First Name:</strong></p>
+           </div>
+           <div class="span2">
+             <p><%= @address.fname %> </p> 
+           </div>
+           <div class="span2">
+             <p><strong>Last Name:</strong></p>
+           </div>
+           <div class="span2">
+             <p><%= @address.lname %> </p>
+           </div>
+         </div> <!--row -->
+         
+         <div class="row">
+           <div class="span2">
+             <p><strong>Street:</strong></p>
+           </div>
+           <div class="span2">
+             <p><%= @address.streetno %> </p> 
+           </div>
+           <div class="span2">
+             <p><strong>Phone</strong></p>
+           </div>
+           <div class="span2">
+             <p><%= @address.phone1 %> </p>
+           </div>
+         </div>   <!--row -->
+
+         <div class="row">
+           <div class="span2">
+             <p><strong>City:</strong></p>
+           </div>
+           <div class="span2">
+             <p><%= @address.city %> </p> 
+           </div>
+           <div class="span2">
+             <p><strong>Mobile</strong> </p>
+           </div>
+           <div class="span2">
+             <p><%= @address.phonem %> </p>
+           </div>
+         </div> <!--row -->
+
+
+         <div class="row">
+           <div class="span2">
+             <p><strong>Zip:</strong></p>
+           </div>
+           <div class="span2">
+             <p><%= @address.zip %> </p> 
+           </div>
+           <div class="span2">
+             <p><strong>Country:</strong></p>
+           </div>
+           <div class="span2">
+             <p><%= @address.country %> </p> 
+           </div> 
+         </div> <!--row -->
+
+       <div class="row">
+         <div class="span2 ">
+           <br>
+           <%= link_to "Change Address", edit_address_path , class: "btn btn btn-primary" %>
+         </div>
+       </div> <!--row -->
+    <% end %>
+         
+  </div> <!--fms2 frame -->
+</div> <!-- tab -->
+
+<div class="tab-pane" id="booking">
+  <br>
+  <div class="fms2">
+
+    <h3>Your booking Details:</h3>
+    <br>  
+    <% if @booking.nil? %>
+      <p>No Booking Details Available</p>
+      <br><br><br>
+    <% else %>
+       <div class="row">
+         <div class="span2">
+           <p><strong>Arrival:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.adate %> </p> 
+         </div>
+         <div class="span2">
+           <p><strong>Departure:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.ddate %> </p>
+         </div>
+       </div> <!--row -->
+
+       <div class="row">
+         <div class="span2">
+           <p><strong>No. Nights:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.nights %> </p> 
+         </div>
+         <div class="span2">
+           <p><strong>No. People:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.people %> </p>
+         </div>
+       </div> <!--row -->
+
+       <div class="row">
+         <div class="span2">
+           <p><strong>Total Price:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.price %> </p> 
+         </div>
+         <div class="span2">
+           <p><strong>Downpayment:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.downp %> </p>
+         </div>
+       </div> <!--row -->
+
+       <div class="row">
+         <div class="span2">
+           <p><strong>Final Cleaning:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.cleaning %> </p> 
+         </div>
+       </div> <!--row -->
+
+
+        <% if is_admin? %>
+          <%= link_to "Delete", edit_address_path  %>
+        <% end %>
+    <% end %>
+
+    <% if is_admin? %>
+       <%= link_to "Add Booking Details", new_user_booking_path(@user) , class: "btn btn btn-primary" %>
+    <% end %>
+
+
+  </div> <!-- frame -->
+</div> <!-- tab -->
+
+<div class="tab-pane" id="history">
+  <br>
+  <div class="fms2">
+    <h3>Your Booking History:</h3>
+    <br>  
+    <% if @ustatus.nil? %>
+         <p>No status available</p>
+         <br><br><br>
+    <% else %>
+      <% @ustatus.each do |status|  %>
+        <div class="row">
+          <div class="span2">
+            <p><%= status.sdate %> </p> 
+          </div>
+          <div class="span2">
+            <p><%= status.status %> </p> 
+          </div>
+        
+        <% if is_admin? %>
+          <%= link_to "Delete", edit_address_path  %>
+        <% end %>
+        </div>
+      <% end %>
+    <% end %>
+      <hr> <hr> <hr> <hr> <hr> <hr> 
+      <% if is_admin? %>
+        <%= link_to "Add Status", edit_ustatus_path , class: "btn btn btn-primary" %>
+      <% end %>
+
+  </div>  <!-- fms2 frame -->  
+</div> <!-- tab -->
+
+
+    <script>
+    
+    $('#FMStab a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+    })
+    </script>
+
+     <br><br>
+
+      <br>
+      <br>
+
+   
+    </div>
+        
+    </section>
+       
