@@ -2,6 +2,11 @@
   <div class="navbar-inner">
     <div class="container">
       <nav>
+        <ul class="nav pull-left">
+        <li><%= link_to "DE", langude_path %></li>
+        <li><%= link_to "EN", languen_path %></li>
+        <li><%= link_to "FR", langufr_path %></li>
+        </ul> 
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path, id: "logo" %></li>
           <li><%= link_to "Apartment", ap1_path %></li>

@@ -1,5 +1,25 @@
 module SessionsHelper
   
+  def langu
+    @langu = read_langu_cookie
+  end
+
+  def langu=(langu)
+    @langu = langu
+  end
+
+  def read_langu_cookie
+   a = cookies[:fms_language]
+   if a.nil?
+   self.langu = 'EN'
+   end
+   self.langu = a
+  end
+
+  def set_langu(la)
+    cookies.permanent[:fms_language] = la
+  end
+
   def sign_in(user)
     cookies.permanent.signed[:remember_token] = [user.id, user.salt]
     self.current_user = user
@@ -28,8 +48,6 @@ module SessionsHelper
      @admin.admin == true
      end
     end
-#    @name = current_user.name
-#    @name == 'admin'    
   end
   
   def sign_out

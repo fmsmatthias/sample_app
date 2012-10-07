@@ -1,4 +1,14 @@
-<h1>Welcome to Biot</h1>
+<% if langu == 'EN' %>
+  <h1>Welcome to Biot</h1>
+<% end %>
+
+<% if langu == 'FR' %>
+  <h1>Bienvenue a Biot</h1>
+<% end %>
+
+<% if langu == 'DE' %>
+  <h1>Willkommen in  Biot</h1>
+<% end %>
 <br>
 <br>
 <div class="span8 offset2">
@@ -8,22 +18,51 @@
 <div class="span2 offset2">
 <strong>
 <br>
-Learn more about the beautiful village of Biot at the cote
-d'azur closed to the sea
+<% if langu == 'EN' %>
+Learn more about the beautiful village of Biot at the Côte
+d'Azur closed to the sea
+<% end %>
+<% if langu == 'FR' %>
+Des informations detaillées sur le petit village de Biot
+sur la Côte d'Azur
+<% end %>
+<% if langu == 'DE' %>
+Hier finden Sie mehr Informationen ueber das kleine Dorf Biot
+an der Côte d'Azur
+<% end %>
+
 </strong>
 </div>
 
 <div class="span2 ">
 <strong>
 <br>  
+<% if langu == 'EN' %>
 Check out out our little apartment in the heart of the old village of Biot
+<% end %>
+<% if langu == 'FR' %>
+Visite virtuelle de notre petit studio au coeur du vieux village de Biot
+<% end %>
+<% if langu == 'DE' %>
+Schauen Sie sich unsere kleine Ferienwohnung im alten Dorf von Biot an
+<% end %>
 </strong>
 </div>
 
 <div class="span2">
 <strong>
 <br>  
+<% if langu == 'EN' %>
 If you have an ongoing booking logon to your personal area 
+<% end %>
+<% if langu == 'FR' %>
+Connectez-vous sur votre espace privé pour voir la situation de
+votre réservation
+<% end %>
+<% if langu == 'DE' %>
+In Ihrem persönlichen Bereich können Sie den Stand Ihrer Buchung
+verfolgen
+<% end %>
 </strong>
 </p>
 </div>

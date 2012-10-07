@@ -3,18 +3,7 @@ class PagesController < ApplicationController
 
 
   def home
-   @user = "fisch"
-   language = "EN"
-
-   @home = "Homex"
-   if language == "E"
-     @ap1 = "Page 1"
-   else
-     @ap1  = "Seite 1"
-   end
-   
-   @ap2  = "Seite2"
-   @contact  = "Contact"
+    #default language english
   end
 
   def ap1
@@ -24,10 +13,25 @@ class PagesController < ApplicationController
   end
 
   def ap2
-   @title = "ap2"
+   @title = "About Biot"
   end
 
   def contact
    @title = "Contact:Hans Wurst"
   end
+
+  def langude
+    set_langu('DE')
+    redirect_to request.referer
+  end 
+
+  def languen
+    set_langu('EN')
+    redirect_to request.referer
+  end 
+
+  def langufr
+    set_langu('FR')
+    redirect_to request.referer
+  end 
 end

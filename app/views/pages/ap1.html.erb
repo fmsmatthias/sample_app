@@ -2,9 +2,19 @@
         <hr>
 <div class="row">
  <div class="span10">
+<% if langu == 'EN' %>
 The holiday apartment is located on the ground floor of a three-storey 'maison de village', overlooking the <%= link_to "Verrerie de Biot","http://www.verreriebiot.com" %>. The spacious and quiet square in front is still known under its former name, 'Place de l'Airette' which means something like 'little resting place'.  Even during peak season only a few tourists find their way here to enjoy a glance over the valley and the Verrerie.
 
 The foundations of the house are sunk into the volcanic rock of the hill, and were originally for a barn, constructed approximately 500 years ago. This explains the unusual thickness of the structural walls, which ensure that the apartment stays pleasantly cool and quiet during the summer months. 
+<% end %>
+
+<% if langu == 'FR' %>
+L'appartement constitue le rez-de-chaussée d'une maison de village au bord d'une falaise au dessus de la <%= link_to "Verrerie de Biot","http://www.verreriebiot.com" %>. . Il se trouve sur la dernière toute petite place du village, connue sur le nom 'place de l'Airette'. Cachée au fond du village, elle est protégée des touristes et même en plein été, très peu s'y hasardent. Ils pourraient pourtant profiter de la belle vue sur la vallée et la verrerie. Les murs très épais sont toujours identiques aux murs de la grange construite sur les roches volcaniques il y a à peu près 500 ans, grâce auxquels les températures en été restent toujours modérées. 
+<% end %>
+<% if langu == 'DE' %>
+Das Appartment befindet sich im Erdgeschoss eines dreigestöckigen 'Maison de Village', direkt am Hang hoch über der <%= link_to "Verrerie de Biot","http://www.verreriebiot.com" %> . Das Haus liegt an einem versteckt gelegenen Platz, der bei den Einwohnern des Dorfes als 'Place de l'Airette' bekannt ist. Selbst im Hochsommer verlaufen sich nur sehr wenige Touristen hierher, um einen kurzen Blick auf das Tal und die Verrerie zu werfen.
+Die Grundmauern des Hauses sind noch mit denen der ca. 500 Jahre alten Scheune identisch, die ehemals direkt auf dem Vulkangestein des Hanges errichtet wurden. Dieses erklärt ihre ungewöhnliche Dicke, was im Sommer dafür sorgt, dass die Wohnung angenehm kühl bleibt. 
+<% end %>
 </div>
 </div>
       <hr>
@@ -24,10 +34,19 @@ The foundations of the house are sunk into the volcanic rock of the hill, and we
 
       <div class="row">
 <div class="span10">
+<% if langu == 'EN' %>
 The apartment consists of a small bedroom (1.40m double bed), a bathroom with shower, toilet and wash basin, a living room with an integrated kitchenette.
 The total size is approx. 25m2 and comfortably accommodates two people. An additional person can sleep on the sofabed in the living room. A cot is available on demand.
 The satellite TV receives diverse channels in German, French and English.
 The open terrace in front of the studio is reserved for our guests: to relax after a day at the beach, to enjoy a "Pastis" before dinner, to read, or whatever pleases you.
+<% end %>
+<% if langu == 'FR' %>
+L'appartement est composé d'une petite chambre à coucher avec un lit pour deux personnes qui mesure 140x200cm, une salle de bain avec toilette et douche, un salon avec kitchenette. La surface totale est de 25m2 environ pour loger confortablement deux personnes. Une troisième pourrait éventuellement dormir sur le canapé clic-clac dans le salon. Le téléviseur avec parabole satellite est pour le moment branché sur le satellite ASTRA, pour recevoir des chaines en langue française, allemande et anglaise. Le petit coin terrasse devant la maison, donnant sur la place, est réservé à nos vacanciers, pour étudier le journal après une journée sur la plage ou pour boire l'apéro... 
+<% end %>
+<% if langu == 'DE' %>
+Die Wohnung besteht aus einem kleinen Schlafraum mit 140 cm Bett, einem Badezimmer mit WC, Waschbecken und Dusche und einem Wohnzimmer mit integrierter Küchenzeile. Die Grundfläche beträgt ca. 25m2 und sie ist für die übernachtung von 2 Personen ausgelegt. Auf dem Schlafbett im Wohnzimmer kann bei Bedarf noch eine weitere Person übernachten. Die Satelliten-Fernsehanlage empfängt verschiedene Programme in Deutscher, Englischer und Französischer Sprache.
+Die gemütliche Sitzecke vor dem Haus ist für unsere Gäste reserviert. Nach einem Tag am Strand in Ruhe die Zeitung lesen oder gleich einen kühlen 'Pastis' vor dem Abendessen genießen, ganz wie Sie wollen. 
+<% end %>
 </div>
 </div>
 
@@ -59,16 +78,23 @@ The open terrace in front of the studio is reserved for our guests: to relax aft
 
 <div class="row">
 <div class="span10">
+<% if langu == 'EN' %>
 Most appealing is the ideal location of the apartment. It is very quiet, and yet is in the heart of the village, where direct car access is not possible. When you arrive, you can unload your car close to the apartment.  Parking, however, is outside the village fortifications, where there are several free public parking areas to choose from.  The apartment is then reached after a few minutes walk through the old village itself.  
 
-In our opinion Biot is one of the loveliest villages on the Côte dAzur  despite its popularity it has maintained its charm and authenticity and it offers a lot of activities for locals and tourists in every season.
+In our opinion Biot is one of the loveliest villages on the Côte d'Azur and despite its popularity it has maintained its charm and authenticity and it offers a lot of activities for locals and tourists in every season.
+<% end %>
+<% if langu == 'FR' %>
+La place extraordinaire où se trouve la maison et l'appartement est située au fond du vieux village de Biot, dans un quartier sans accès aux voitures, par conséquent calme et en même temps proche des restaurants et commerces. Les voitures sont garées sur le parking le plus proche qui se trouve à 3 minutes à pied (pour décharger la voiture il y a la possibilité d'entrer dans le village pour se garer à proximité de la maison)Le village de Biot, un des plus beaux de la Côte d'Azur, a conservé son caractère authentique et, en même temps, est devenu un lieu vivant attirant les habitants et les touristes. 
+<% end %>
+<% if langu == 'DE' %>
+Besonders reizvoll ist die wunderschöne, ruhige und dennoch zentrale Lage im Herzen des alten Dorfes, in einem Viertel, in dem kein Autoverkehr möglich ist. Das Auto parkt man außerhalb der Stadtmauern und nimmt daher einen zwei- bis dreiminütigen Fußweg in Kauf (zu Entladung des Gepäcks kann man jedoch kurzzeitig in das Dorf fahren!). Wir finden, dass dieser Ort einer der bezaubernsten Orte an der Côte d'Azur ist, weil er sich trotz der Beliebtheit immer noch einen authentischen Charme bewahrt hat und zu jeder Jahreszeit viel für die Besucher und die Einheimischen bietet. 
+<% end %>
 </div>
 </div>
 
 <hr>
 
 <h2>Rental Fees</h2>
-
 <div class="row">
   <div class="span10">
 
@@ -91,9 +117,18 @@ In our opinion Biot is one of the loveliest villages on the Côte dAzur  des
 
 <div class="row">
         <div class="span10">
+<% if langu == 'EN' %>
 During the main season the apartment is available on a weekly basis only. Arrival on Saturday after 3 p.m. and departure Saturday until 10 a.m. Throughout the rest of the year the rental period can be shorter (minimum 3 days).
 All prices include water, gas and bed linen. Electricity is charged extra if heating is needed. Final cleaning is obligatory and will be charged 30 Euros.
 Pets are welcome, but please contact us beforehand.
+<% end %>
+<% if langu == 'FR' %>
+En haute-saison, la durée minimale du séjour est d'une semaine. Arrivée le samedi à partir de 15 heures, départ le samedi à 10 heures. Pendant les autres périodes, les séjours peuvent être réservés à partir de trois nuits. Les tarifs incluent les consommations d'eau, gaz, électricité et l'utilisation de draps. Le nettoyage de l'appartement à la fin du séjour sera chargé 30 Euros. Chiens et chats sont les bienvenus, merci de nous contacter à l'avance. 
+<% end %>
+<% if langu == 'DE' %>
+In der Hauptsaison wird die Wohnung nur wochenweise vermietet. Anreise am Samstag ab 15 Uhr und Abreise am Samstag bis 10 Uhr.
+In den übrigen Monaten vermieten wir die Wohnung auch gerne für einen kürzeren Zeitraum (ab 3 übernachtungen), An- und Abreise können flexibel abgesprochen werden. Die Preise verstehen sich inklusive Wasser/Gas/Strom und Bettwäsche. Für die obligatorische Endreinigung berechnen wir 35 Euro zusätzlich. Katzen und Hunde sind willkommen (bitte zuvor mit uns abklvren). 
+<% end %>
 </div>
        </div>
 <br><hr>

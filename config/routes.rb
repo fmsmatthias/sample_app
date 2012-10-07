@@ -18,6 +18,9 @@ SampleApp::Application.routes.draw do
   match '/ap1',          :to => 'pages#ap1' 
   match '/ap2',          :to => 'pages#ap2'
   match '/contact',      :to => 'pages#contact'
+  match '/langude',      :to => 'pages#langude'
+  match '/languen',      :to => 'pages#languen'
+  match '/langufr',      :to => 'pages#langufr'
  
 
 #'sessions#destroy' , via: :delete
