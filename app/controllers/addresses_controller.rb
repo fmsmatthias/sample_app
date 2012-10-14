@@ -7,13 +7,11 @@ class AddressesController < ApplicationController
 
   def new
     @address = Address.new
-#    @user    = User.find(2)
   end
 
   def create
     @address = Address.new(params[:address])
     @user    = User.find_by_id(@address.user_id)
-#    @address.user_id = current_user.id
     if @address.save
       flash[:success] = "Address created!"
       redirect_to @user
@@ -45,21 +43,12 @@ class AddressesController < ApplicationController
      @address = Address.new(params[:address]) 
      @user    = User.find_by_id(@address.user_id)
      @address2 = Address.find_by_user_id(@address.user_id)
- #   if @address2.nil?
- #     if @address.save
- #       flash[:success] = "Adress created"
- #       redirect_to current_user
- #     else
- #       render 'edit'
- #    end
- #   else
       if @address2.update_attributes(params[:address])
         flash[:success] = "Adress changed"
         redirect_to @user
       else
         render 'edit'
       end
- #   end
   end
 
 end

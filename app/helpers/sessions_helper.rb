@@ -1,5 +1,17 @@
 module SessionsHelper
   
+  def rate_text(apartment, season)
+  #localise language from cookie
+  l_langu = langu 
+  season = Season.where("season = ? AND langu = ?",season ,l_langu).first
+  if season.nil?
+    text = "missing text"
+  else
+    text = season.text
+  end
+end
+
+  
   def langu
     @langu = read_langu_cookie
   end
@@ -12,8 +24,9 @@ module SessionsHelper
    a = cookies[:fms_language]
    if a.nil?
    self.langu = 'EN'
-   end
+   else
    self.langu = a
+   end
   end
 
   def set_langu(la)

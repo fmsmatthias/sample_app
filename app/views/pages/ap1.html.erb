@@ -99,15 +99,12 @@ Besonders reizvoll ist die wunderschöne, ruhige und dennoch zentrale Lage im He
   <div class="span10">
 
   <% @rates.each do |rate|  %>
-    <%  season(rate.season) %>
-    <% @seasons.each do |season|  %>
       <%=  rate.season %>
-      <%=  season.text %>
+      <%= rate_text(1, rate.season) %>
       :
       <%=  rate.price %>
       Euros/day 
       <br>
-    <% end %>
   <% end %>
   </div>
 </div>
@@ -136,10 +133,19 @@ In den übrigen Monaten vermieten wir die Wohnung auch gerne für einen kürzere
 <div class="row">
         <div class="span10">
 <h2>Booking</h2>
+<% if langu == 'EN' %>
 Please send us an e-mail with your inquiry or just give us a call.
 <br>
 To validate your reservation we ask for a down payment of 25% of the total rental fee via bank transfer within 10 days after confirmation. The balance is due a few days before your arrival date. 
 The security deposit is 150 Euros, which is reimbursed at the end of your stay.
+<% end %>
+<% if langu == 'FR' %>
+La réservation peut être faite par email ou par téléphone. Il sera toutefois nécessaire de valider celle-ci en envoyant un acompte de 25% de la somme totale sous dizaine. Le montant restant devra être versé 10 jours avant le début du séjour. Une caution de 150 Euros sera également demandée. Elle vous sera remboursée le jour du départ après inspection de l'appartement. 
+<% end %>
+<% if langu == 'DE' %>
+Bitte schicken Sie uns eine e-Mail mit Ihrer Anfrage oder rufen Sie uns einfach an.
+Für eine gültige Reservierung erbitten wir eine Anzahlung in Höhe von 25% der Mietsumme, die innerhalb von 10 Tagen nach Buchung bei uns eingegangen sein muss. Den Restbetrag überweisen Sie bitte einige Tage vor Ihrer Ankunft. Die Kaution beträgt 150 Euro und wird Ihnen am Tag der Abreise nach der Wohnungsübergabe erstattet. 
+<% end %>
 </div>
        </div>
 <br><hr>
@@ -147,7 +153,16 @@ The security deposit is 150 Euros, which is reimbursed at the end of your stay.
 <div class="row">
         <div class="span10">
 <h2>Attention</h2>
+<% if langu == 'EN' %>
 Please be aware that you cannot park your car directly in front of the apartment, but only on the public parking outside the village, from where you walk uphill for 3 minutes.
+<% end %>
+<% if langu == 'FR' %>
+L'appartement n'est pas accessible en voiture. Il faut se garer en dehors du vieux village est monter pendant 3 minutes. 
+<% end %>
+<% if langu == 'DE' %>
+Bitte beachten Sie, dass die Ferienwohnung nicht direkt mit dem Auto zugänglich ist und dass Sie vom Parkplatz aus ca. 3 Minuten zu Fuß gehen. Dabei geht es teilweise auch bergauf! 
+<% end %>
+
 <br></br>
 
         </div>
