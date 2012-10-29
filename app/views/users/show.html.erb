@@ -1,9 +1,15 @@
 <% provide(:title, @user.name) %>
     <section>
-      <h1>
+        <p><big><strong>
+          <% flash.each do |key, value| %>
+          <br>
+          <%= content_tag(:div, value, :class => "flash #{key}") %>
+          <% end %>
+        <p></big></strong> 
+      <h2><strong>
         Hello 
         <%= @user.name %>
-      </h1>
+      </h2></strong>
       <br>
       <br>
 
@@ -203,7 +209,6 @@
         </div>
       <% end %>
     <% end %>
-      <hr> <hr> <hr> <hr> <hr> <hr> 
       <% if is_admin? %>
         <%= link_to "Add Status", edit_ustatus_path , class: "btn btn btn-primary" %>
       <% end %>

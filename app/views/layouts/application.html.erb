@@ -12,12 +12,6 @@
     <div class="container">
       <%= render 'layouts/header' %>
       <section class="round">
-        <p><big><strong>
-          <% flash.each do |key, value| %>
-          <br>
-          <%= content_tag(:div, value, :class => "flash #{key}") %>
-          <% end %>
-        <p></big></strong> 
       <div class="hero-unit">
           <%= yield %>
       </div>

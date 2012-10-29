@@ -1,9 +1,8 @@
 <% provide(:title, "Sign in") %>
 <br>
 <br>
+<h2><strong>Sign in</h2></strong>
 <br>
-<br>
-<h1>Sign in</h1>
 <br>
 <br>
 <br>
@@ -11,6 +10,12 @@
   <div class="span6 offset3">
     <%= form_for(:session, url: sessions_path) do |f| %>
 
+          <% flash.each do |key, value| %>
+            <div class="alert alert-error">
+              <%= content_tag(:div, value, :class => "flash #{key}") %>
+            </div>
+          <% end %>
+<br>
       <%= f.label :email %>
       <%= f.text_field :email %>
 <br>

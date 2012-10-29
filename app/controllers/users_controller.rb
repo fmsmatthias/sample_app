@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @title = @user.name
     @address = Address.find_by_user_id(@user.id)
-    @ustatus = Ustatus.where("user_id=?", @user.id)
+    @ustatus = Ustatus.find_by_user_id(@user.id)
     @booking = Booking.find_by_user_id(@user.id)
  end
 
