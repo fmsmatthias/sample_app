@@ -204,7 +204,7 @@
           </div>
         
         <% if is_admin? %>
-          <%= link_to "Delete", edit_address_path  %>
+        <%= link_to 'Delete', status, confirm: 'Are you sure?', method: :delete %>
         <% end %>
         </div>
       <% end %>

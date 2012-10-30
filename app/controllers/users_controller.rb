@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @title = @user.name
     @address = Address.find_by_user_id(@user.id)
-    @ustatus = Ustatus.find_by_user_id(@user.id)
+    @ustatus = Ustatus.where("user_id=?", @user.id)
     @booking = Booking.find_by_user_id(@user.id)
  end
 
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      redirect_to @user, :flash => { :success => "Welcome to the Sample App!" }
+      redirect_to @user, :flash => { :success => "Your Account has been created!" }
     else
       @title = "Sign up"
       render 'new'
