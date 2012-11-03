@@ -12,6 +12,7 @@ def edit
 @user = User.find(params[:id])
 @ustatus = Ustatus.new
 @ustatus.user_id = @user.id
+@statusall=Statusvalue.all
 end
 
   def create

@@ -1,15 +1,26 @@
 module SessionsHelper
   
   def rate_text(apartment, season)
+    #localise language from cookie
+    l_langu = langu 
+    season = Season.where("season = ? AND langu = ?",season ,l_langu).first
+    if season.nil?
+      text = "missing text"
+    else
+      text = season.text
+    end
+  end
+
+def status_text(status)
   #localise language from cookie
   l_langu = langu 
-  season = Season.where("season = ? AND langu = ?",season ,l_langu).first
-  if season.nil?
+  status = Statusvalue.where("status = ? AND langu = ?",status ,l_langu).first
+  if status.nil?
     text = "missing text"
   else
-    text = season.text
+    text = status.text
   end
-end
+  end
 
   
   def langu

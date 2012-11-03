@@ -171,14 +171,13 @@
          </div>
        </div> <!--row -->
 
-
         <% if is_admin? %>
           <%= link_to "Delete", edit_address_path  %>
         <% end %>
     <% end %>
 
     <% if is_admin? %>
-       <%= link_to "Add Booking Details", new_user_booking_path(@user) , class: "btn btn btn-primary" %>
+      <%= link_to "Add Booking Details", new_user_booking_path(@user) , class: "btn btn btn-primary" %>
     <% end %>
 
 
@@ -199,8 +198,8 @@
           <div class="span2">
             <p><%= status.sdate %> </p> 
           </div>
-          <div class="span2">
-            <p><%= status.status %> </p> 
+          <div class="span4">
+            <p><%= status_text(status.status) %> </p> 
           </div>
         
         <% if is_admin? %>

@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  resources :statusvalues
+
   resources :seasons
   resources :rates
   resources :users do
@@ -7,6 +9,7 @@ SampleApp::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :addresses 
   resources :ustatuses
+  resources :statusvalues
 
 
   root :to => 'pages#home'

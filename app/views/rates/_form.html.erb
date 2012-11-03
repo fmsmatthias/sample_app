@@ -1,3 +1,6 @@
+<div class="row">
+  <div class="span6 offset2">
+
 <%= form_for(@rate) do |f| %>
   <% if @rate.errors.any? %>
     <div id="error_explanation">
@@ -11,19 +14,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :apartment %><br />
+<br><br>
+    <%= f.label :apartment %>
     <%= f.number_field :apartment %>
-  </div>
-  <div class="field">
-    <%= f.label :season %><br />
+<br>
+    <%= f.label :season %>
     <%= f.number_field :season %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
+  <br>
+    <%= f.label :price %>
     <%= f.number_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <br><br>
+      <%= f.submit "Create/Change Rate", class: "btn btn-large btn-primary" %>
+  
 <% end %>
+
+  </div>
+</div>
+

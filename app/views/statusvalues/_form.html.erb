@@ -1,0 +1,31 @@
+<%= form_for(@statusvalue) do |f| %>
+  <% if @statusvalue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@statusvalue.errors.count, "error") %> prohibited this statusvalue from being saved:</h2>
+
+      <ul>
+      <% @statusvalue.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.number_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Language %><br />
+    <%= f.select :langu, [['English','EN'],['French','FR'],['German','DE']] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text %><br />
+    <%= f.text_field :text %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

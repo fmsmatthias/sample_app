@@ -1,0 +1,27 @@
+<h2><strong> Status Values</h2></strong>
+
+<table>
+  <tr>
+    <th>Status</th>
+    <th>Language</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @statusvalues.each do |statusvalue| %>
+  <tr>
+    <td><%= statusvalue.status %></td>
+    <td><%= statusvalue.langu %></td>
+    <td><%= statusvalue.text %></td>
+    <td><%= link_to 'Show', statusvalue %></td>
+    <td><%= link_to 'Edit', edit_statusvalue_path(statusvalue) %></td>
+    <td><%= link_to 'Destroy', statusvalue, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Statusvalue', new_statusvalue_path %>

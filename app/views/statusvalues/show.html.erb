@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Status:</b>
+  <%= @statusvalue.status %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @statusvalue.langu %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @statusvalue.text %>
+</p>
+
+
+<%= link_to 'Edit', edit_statusvalue_path(@statusvalue) %> |
+<%= link_to 'Back', statusvalues_path %>
