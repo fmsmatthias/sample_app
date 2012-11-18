@@ -60,11 +60,11 @@
 .hero-unit {
   background-image: -moz-linear-gradient(bottom, #C5E0F4 0%, #EAEFEE 100%);
   margin-top: 0px;
+  margin-bottom: 10px;
   label{width: 150px; float:left}
 }
 
-.navbar  { background-color: #EAEFEE;
-}
+.navbar  { background-color: #EAEFEE;}
 
 .container {width:900px; margin-top: 0px auto;}
 
@@ -378,7 +378,52 @@ border-width:1px;
 -moz-border-radius: .5em;
  padding: 2.5em 2em 2.2em;
  border-color: #BBB3B3;
+ margin-top: 10px;
+}
 
+div.fmslrow {
+border-style:solid;
+border-width:0px;
+-webkit-border-radius: .5em;
+-moz-border-radius: .5em;
+ padding: 0.6em 2em 0.2em;
+ border-color: #BBB3B3;
+ margin-top: 0px;
+ margin-bottom: 12px;
+ font-weight:normal;
+ background-color: #C5E0F4;
+}
+.nav-pills{border-width:0px;
+          font-size:2.0em;
+          text-align:center;
+          padding: 0.5em 0em 0em;}
+
+#container2 {
+    border: 0px dashed #444;
+    height: 125px;
+    
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    
+    /* just for demo */
+    min-width: 612px;
+}
+
+.box1, .box2, .box3, .box4 {
+    width: 150px;
+    height: 125px;
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    *display: inline;
+    zoom: 1
+}
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
 }
 
 

@@ -177,7 +177,11 @@
     <% end %>
 
     <% if is_admin? %>
-      <%= link_to "Add Booking Details", new_user_booking_path(@user) , class: "btn btn btn-primary" %>
+      <% if @booking.nil? %>
+        <%= link_to "Add Booking Details", new_user_booking_path(@user) , class: "btn btn btn-primary" %>
+      <% else %>
+       <%= link_to "Change Booking Details", edit_user_booking_path(@user) , class: "btn btn btn-primary" %>      
+      <% end %>
     <% end %>
 
 

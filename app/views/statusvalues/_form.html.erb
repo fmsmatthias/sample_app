@@ -11,21 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :status %><br />
+    <br><br>
+    <%= f.label :status %>
     <%= f.number_field :status %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Language %><br />
+    <br>
+    <%= f.label :Language %>
     <%= f.select :langu, [['English','EN'],['French','FR'],['German','DE']] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :text %><br />
+    <br>
+    <%= f.label :text %>
     <%= f.text_field :text %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <br><br>
+    <%= f.submit "Create/Change Status Value", class: "btn btn-large btn-primary" %>
 <% end %>

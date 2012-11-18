@@ -13,6 +13,10 @@ class PagesController < ApplicationController
    @title = "About Biot"
   end
 
+  def ap2
+   @title = "Activities in and around Biot"
+  end
+
   def contact
    @title = "Contact:Hans Wurst"
   end

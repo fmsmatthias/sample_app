@@ -1,12 +1,12 @@
 <h2><strong> Maintain Status for User</h2></strong>
 <br>
 <h2><%= @user.name %></h2>
-
-<p>1 = Reservation requested</p>
-<p>2 = Reservation requested</p>
-<p>3 = Waiting from Payment</p>
-<p>4 = Payment received</p>
+<div class="row">
+  <div class="span6 offset2">
 
 <%= render 'form' %>
 
 <%= link_to 'Back', @user %>
+
+</div>
+</div>

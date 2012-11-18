@@ -11,80 +11,100 @@
 <% end %>
 <br>
 <br>
+
 <div class="span8 offset2">
   <%= image_tag("intro_biot.jpg", :height => '420', :width => '420') %>
 </div>
+
 <div class="row">
-<div class="span2 offset2">
-<strong>
-<br>
-<% if langu == 'EN' %>
-Learn more about the beautiful village of Biot at the Côte
-d'Azur closed to the sea
-<% end %>
-<% if langu == 'FR' %>
-Des informations detaillées sur le petit village de Biot
-sur la Côte d'Azur
-<% end %>
-<% if langu == 'DE' %>
-Hier finden Sie mehr Informationen ueber das kleine Dorf Biot
-an der Côte d'Azur
-<% end %>
-
-</strong>
 </div>
 
-<div class="span2 ">
-<strong>
-<br>  
-<% if langu == 'EN' %>
-Check out out our little apartment in the heart of the old village of Biot
-<% end %>
-<% if langu == 'FR' %>
-Visite virtuelle de notre petit studio au coeur du vieux village de Biot
-<% end %>
-<% if langu == 'DE' %>
-Schauen Sie sich unsere kleine Ferienwohnung im alten Dorf von Biot an
-<% end %>
-</strong>
-</div>
 
-<div class="span2">
-<strong>
-<br>  
-<% if langu == 'EN' %>
-If you have an ongoing booking logon to your personal area 
-<% end %>
-<% if langu == 'FR' %>
-Connectez-vous sur votre espace privé pour voir la situation de
-votre réservation
-<% end %>
-<% if langu == 'DE' %>
-In Ihrem persönlichen Bereich können Sie den Stand Ihrer Buchung
-verfolgen
-<% end %>
-</strong>
-</p>
-</div>
-</div>
-<div class="row">
-<div class="span2 offset2">
-<br>  
-<%= link_to "Biot Village", ap2_path , class: "btn btn-large btn-primary" %>
-</div>
-<div class="span2">
-<br>  
-  <%= link_to "Apartment Info", ap1_path , class: "btn btn-large btn-primary" %>
-</div>
+<br> <br> 
 
-<div class="span2">
-<br>  
-  <% if signed_in? %>
-  <%= link_to current_user.name, user_path(current_user) , class: "btn btn-large btn-primary" %>
-  <% else %>
-  <%= link_to "Your booking", signin_path , class: "btn btn-large btn-primary" %>
-  <% end %>
-</div>
-</div>
 
+<div id="container2">
+
+  <div class="box1">
+    <strong>
+    <% if langu == 'EN' %>
+      Check out our little apartment in the heart of the old village of Biot at the Cote d'Azur
+      <br><br>
+    <% end %>
+    <% if langu == 'FR' %>
+     Visite virtuelle de notre petit studio au coeur du vieux village de Biot
+     <br><br><br>
+    <% end %>
+    <% if langu == 'DE' %>
+      Schauen Sie sich unsere kleine Ferienwohnung im alten Dorf von Biot an
+      <br><br>
+    <% end %>
+    </strong>
+    <%= link_to "Apartment Info", ap1_path , class: "btn btn-large btn-primary" %>
+  </div>
+
+  <div class="box2">
+    <strong>
+    <% if langu == 'EN' %>
+      Learn more about the beautiful village of Biot at the Côte
+      d'Azur closed to the sea
+      <br><br>
+    <% end %>
+    <% if langu == 'FR' %>
+      Des informations detaillées sur le petit village de Biot
+      sur la Côte d'Azur
+      <br><br>
+    <% end %>
+    <% if langu == 'DE' %>
+      Hier finden Sie mehr Informationen ueber das kleine Dorf Biot
+      an der Côte d'Azur
+      <br><br>
+    <% end %>
+    </strong>
+    <%= link_to "Biot Village", ap2_path , class: "btn btn-large btn-primary" %>
+  </div>
+
+  <div class="box3">
+  <strong>
+    <% if langu == 'EN' %>
+      Activities in BiotActivities in BiotActivities in BiotActivities
+      <br><br>
+    <% end %>
+    <% if langu == 'FR' %>
+      Franz aktivit'tenActivities in BiotActivities in BiotActivities 
+      <br><br>
+    <% end %>
+    <% if langu == 'DE' %>
+      Auf DeutschActivities in BiotActivities in BiotActivities in BiotActivitie
+      <br><br>
+    <% end %>
+    </strong>
+    <%= link_to "Biot Activities", ap3_path , class: "btn btn-large btn-primary" %>
+  </div>
+
+  <div class="box4">
+    <strong>
+    <% if langu == 'EN' %>
+      If you have an ongoing booking logon to your personal area and check your booking
+      <br><br>
+    <% end %>
+    <% if langu == 'FR' %>
+      Connectez-vous sur votre espace privé pour voir la situation de
+      votre réservation
+      <br><br>
+    <% end %>
+    <% if langu == 'DE' %>
+      In Ihrem persönlichen Bereich können Sie den Stand Ihrer Buchung
+      verfolgen
+      <br><br>
+    <% end %>
+    </strong>
+    <% if signed_in? %>
+      <%= link_to current_user.name, user_path(current_user) , class: "btn btn-large btn-primary" %>
+    <% else %>
+      <%= link_to "Your booking", signin_path , class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+  <span class="stretch"></span>
+</div>
 

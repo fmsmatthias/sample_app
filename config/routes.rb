@@ -20,6 +20,7 @@ SampleApp::Application.routes.draw do
 
   match '/ap1',          :to => 'pages#ap1' 
   match '/ap2',          :to => 'pages#ap2'
+  match '/ap3',          :to => 'pages#ap3'
   match '/contact',      :to => 'pages#contact'
   match '/langude',      :to => 'pages#langude'
   match '/languen',      :to => 'pages#languen'

@@ -1,0 +1,98 @@
+
+
+    <ul class="nav nav-pills" id="FMS2tab">
+
+    <li class="active"><a href="#Biot">Biot</a></li>
+    <li><a href="#Glass">Glass Blowing</a></li>
+    <li><a href="#Musee">Museum</a></li>
+    <li><a href="#Marine">Marineland</a></li>
+    </ul>
+
+<hr>
+<br>
+
+<div class="tab-content">
+
+
+<div class="tab-pane active" id="Biot">
+
+      <div class="row">
+        <div class="span10">
+        <ul class="media-grid">   
+           <li><a><img src="/assets/Biot1.jpeg"></a></li>
+           <li><a><img src="/assets/Biot3.jpeg"></a></li>
+           <li><a><img src="/assets/Biot3.jpeg"></a></li>
+         </ul>
+        </div>
+       </div>
+
+The official website of Biot gives an overview of the community. it shows all administrative links
+and contains the Biot event calendar
+<br>
+
+<table class="table">  
+        <thead>  
+          <tr>  
+            <th>Name</th>  
+            <th>URL</th>  
+          </tr>  
+        </thead>  
+        <tbody>  
+          <tr>  
+            <td>Biot</td>  
+            <td><%= link_to "www.biot.fr","http://www.biot.fr", :target => "_blank" %> </td>  
+          </tr>  
+          <tr>  
+            <td>Biot Tourism</td>  
+            <td><%= link_to "www.biot-tourisme.com","http://www.biot-tourisme.com", :target => "_blank" %> </td>  
+          </tr>  
+
+        </tbody>  
+</table>
+</div> <!-- tab -->
+
+<div class="tab-pane" id="Glass">
+        <div class="row">
+        <div class="span10">
+        <ul class="media-grid">   
+           <li><a><img src="/assets/verre1.jpg"></a></li>
+           <li><a><img src="/assets/verre2.jpeg"></a></li>
+           <li><a><img src="/assets/verre3.jpeg"></a></li>
+           <li><a><img src="/assets/verre4.jpeg"></a></li>
+           <li><a><img src="/assets/verre5.jpeg"></a></li>
+         </ul>
+        </div>
+       </div>
+
+
+Glass
+      <%= link_to "verrerie de Biot","http://www.verreriebiot.com", :target => "_blank" %>
+
+</div> <!-- tab -->
+
+
+
+<div class="tab-pane" id="Musee">
+Museum hier
+<%= link_to "Fernand Leger","http://www.musees-nationaux-alpesmaritimes.fr/fleger/", :target => "_blank" %>
+</div> <!-- tab -->
+
+<div class="tab-pane" id="Marine">
+Fische Fische
+      <%= link_to "Marineland","http://www.marineland.fr", :target => "_blank"%>
+</div> <!-- tab -->
+
+
+    <script>
+    
+    $('#FMS2tab a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+    })
+    </script>
+
+
+
+
+
+

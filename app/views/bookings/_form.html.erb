@@ -1,9 +1,29 @@
-<div class="row">
-  <div class="span7 offset2">
+<%= form_for [@user, @booking] do |f| %>
 
-das ist gany neu
-  </div>    
+        <%= f.label :"Arrival" %>
+        <%= f.text_field :adate %>
+        <br>
+        <%= f.label :"Departure" %>
+        <%= f.text_field :ddate %>
+        <br>
+        <%= f.label :"NoNights" %>
+        <%= f.text_field :nights %>
+        <br>
+        <%= f.label :"NumberPeople" %>
+        <%= f.text_field :people %>
+        <br>
+        <%= f.label :"TotalPrice" %>
+        <%= f.text_field :price %>
+        <br>
+        <%= f.label :"Downpayment" %>
+        <%= f.text_field :downp %>
+        <br>
+        <%= f.label :"FinalCleaning" %>
+        <%= f.text_field :cleaning %>
+        <br>
 
-
-</div>    
+      <%= f.submit "Save Booking", class: "btn btn-primary" %>
+      <%= link_to 'Back', @user %>
+<br>
+<% end %>
 
