@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-#      UserMailer.welcome_email(@user).deliver
+      UserMailer.welcome_email(@user).deliver
       redirect_to @user, :flash => { :success => "Your Account has been created!" }
     else
       @title = "Sign up"
@@ -45,6 +45,24 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @address = Address.find_by_user_id(params[:id])
+    if @address.present?
+      @address.destroy
+    end
+    @ustatus = Ustatus.find_by_user_id(params[:id])
+    if @ustatus.present?
+      @ustatus.destroy
+    end
+    @Booking = Booking.find_by_user_id(params[:id])
+    if @booking.present?
+      @booking.destroy
+    end
+    User.find(params[:id]).destroy
+    flash[:success] = "User destroyed."
+    redirect_to users_url
   end
 
   private

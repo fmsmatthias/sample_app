@@ -401,7 +401,7 @@ border-width:0px;
 #container2 {
     border: 0px dashed #444;
     height: 125px;
-    
+
     text-align: justify;
     -ms-text-justify: distribute-all-lines;
     text-justify: distribute-all-lines;
@@ -410,7 +410,7 @@ border-width:0px;
     min-width: 612px;
 }
 
-.box1, .box2, .box3, .box4 {
+.box1 {
     width: 150px;
     height: 125px;
     vertical-align: top;
@@ -419,6 +419,29 @@ border-width:0px;
     *display: inline;
     zoom: 1
 }
+
+.box2 {
+    border: 0px dashed #444;
+    width: 350px;
+    height: 300px;
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    *display: inline;
+    zoom: 1
+}
+
+.box3 {
+    border: 0px dashed #444;
+    width: 40px;
+    height: 300px;
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    *display: inline;
+    zoom: 1
+}
+
 .stretch {
     width: 100%;
     display: inline-block;
@@ -426,4 +449,18 @@ border-width:0px;
     line-height: 0
 }
 
+#container3 {
+    border: 10px dashed #444;
+    height: 300px;
+    width: 500px;
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    
+    /* just for demo */
+    min-width: 612px;
+}
 
+/* sidebar  http://charliepark.org/bootstrap_buttons/ */
+
+.btn-custom { background-color: hsl(185, 62%, 59%) !important; background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c1ecf0", endColorstr="#55ccd7"); background-image: -khtml-gradient(linear, left top, left bottom, from(#c1ecf0), to(#55ccd7)); background-image: -moz-linear-gradient(top, #c1ecf0, #55ccd7); background-image: -ms-linear-gradient(top, #c1ecf0, #55ccd7); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c1ecf0), color-stop(100%, #55ccd7)); background-image: -webkit-linear-gradient(top, #c1ecf0, #55ccd7); background-image: -o-linear-gradient(top, #c1ecf0, #55ccd7); background-image: linear-gradient(#c1ecf0, #55ccd7); border-color: #55ccd7 #55ccd7 hsl(185, 62%, 52.5%); color: #333 !important; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.42); -webkit-font-smoothing: antialiased; }

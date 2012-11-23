@@ -1,0 +1,20 @@
+                  List of relations
+ Schema |       Name        |   Type   |    Owner     
+--------+-------------------+----------+--------------
+ public | addresses         | table    | fmsmatthias2
+ public | addresses_id_seq  | sequence | fmsmatthias2
+ public | admins            | table    | fmsmatthias2
+ public | admins_id_seq     | sequence | fmsmatthias2
+ public | bookings          | table    | fmsmatthias2
+ public | bookings_id_seq   | sequence | fmsmatthias2
+ public | rates             | table    | fmsmatthias2
+ public | rates_id_seq      | sequence | fmsmatthias2
+ public | schema_migrations | table    | fmsmatthias2
+ public | seasons           | table    | fmsmatthias2
+ public | seasons_id_seq    | sequence | fmsmatthias2
+ public | users             | table    | fmsmatthias2
+ public | users_id_seq      | sequence | fmsmatthias2
+ public | ustatuses         | table    | fmsmatthias2
+ public | ustatuses_id_seq  | sequence | fmsmatthias2
+(15 rows)
+
