@@ -10,6 +10,6 @@ ActionMailer::Base.smtp_settings = {
     :domain         => 'domain.pl',
     :port           => 587,
     :user_name      => 'matthias.scheele06@googlemail.com',
-    :password       => '1%homme06xx',
+    :password       => '1%femme06xx',
     :authentication => :plain
 }
