@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      UserMailer.welcome_email(@user).deliver
+#      UserMailer.welcome_email(@user).deliver
       redirect_to @user, :flash => { :success => "Your Account has been created!" }
     else
       @title = "Sign up"
