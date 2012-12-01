@@ -21,6 +21,15 @@ class PagesController < ApplicationController
    @title = "Contact:Hans Wurst"
   end
 
+  def apx
+   @title = "Dummy Page"
+   @user = User.find_by_id(params[:umessage][:user_id])
+   
+   @text = params[:umessage][:text]
+   UserMailer.smessage_email(@user, @text).deliver
+   redirect_to request.referer, :flash => { :success => "E-mail has been sent!" }
+  end
+
   def langude
     set_langu('DE')
     redirect_to request.referer

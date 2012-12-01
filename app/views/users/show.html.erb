@@ -60,7 +60,7 @@
            <div class="span2">
              <p><strong>Phone</strong></p>
            </div>
-           <div class="span2">
+           <div class="span3">
              <p><%= @address.phone1 %> </p>
            </div>
          </div>   <!--row -->
@@ -75,7 +75,7 @@
            <div class="span2">
              <p><strong>Mobile</strong> </p>
            </div>
-           <div class="span2">
+           <div class="span3">
              <p><%= @address.phonem %> </p>
            </div>
          </div> <!--row -->
@@ -230,11 +230,30 @@
 
      <br><br>
 
-      <br>
-      <br>
+     
+
+<!-- Message form --> 
+
+<div class="row">
+  <div class="span10">
+<p>Any questions?</p>
+    <%= form_for(:umessage, url: apx_path, method: "GET") do |f| %>
+
+      <%= f.hidden_field :user_id, :value => @user.id %>
+      <%= f.text_area :text %>
+<br>
+      <%= f.submit "Send Message", confirm: 'Send Message?', class: "btn btn-primary" %>
+
+    <% end %>
+
+</div>
+</div>
+
 
    
     </div>
+
+
         
     </section>
        

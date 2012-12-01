@@ -7,4 +7,12 @@ class UserMailer < ActionMailer::Base
     mail(:to => user.email, :subject => "Welcome to Biot")
   end
 
+  def smessage_email(user, text)
+    @user = user
+    @url  = "http://www.biot06.com/"
+    @text = text
+    
+    mail(:to => "studio@biot06.com", :from => user.email, :subject => "Question from a User")
+  end
+
 end
