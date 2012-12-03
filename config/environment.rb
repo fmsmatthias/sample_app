@@ -7,10 +7,10 @@ SampleApp::Application.initialize!
 ActionMailer::Base.delivery_method = :smtp
 
 ActionMailer::Base.smtp_settings = {
-    :address        => ' ',
-    :domain         => ' ',
+    :address        => ENV['FMS_ADR'],
+    :domain         => ENV['FMS_DOM'],
     :port           => 587,
-    :user_name      => ' ',
-    :password       => ' ',
+    :user_name      => ENV['FMS_USR'],
+    :password       => ENV['FMS_PWR'],
     :authentication => :plain
 }
