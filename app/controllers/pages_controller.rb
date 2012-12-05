@@ -22,10 +22,9 @@ class PagesController < ApplicationController
   end
 
   def apx
-   correct_user
+   current_user
    @title = "Dummy Page"
    @user = User.find_by_id(params[:umessage][:user_id])
-   
    @text = params[:umessage][:text]
    UserMailer.smessage_email(@user, @text).deliver
    redirect_to request.referer, :flash => { :success => "E-mail has been sent!" }

@@ -14,3 +14,6 @@ ActionMailer::Base.smtp_settings = {
     :password       => ENV['FMS_PWR'],
     :authentication => :plain
 }
+
+
+
