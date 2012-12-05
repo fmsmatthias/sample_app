@@ -244,7 +244,7 @@
 <!-- Message form --> 
 
 <div class="row">
-  <div class="span10">
+  <div class="span4">
 <p>Any questions?</p>
     <%= form_for(:umessage, url: apx_path, method: "GET") do |f| %>
 
@@ -256,6 +256,25 @@
     <% end %>
 
 </div>
+  <div class="span6">
+<br><br>
+<% if langu == 'DE' %>
+Bitte teilen Sie uns Ihre vollständige Adresse, sowie Festnetz- und Mobiltelefonnummer mit.
+Wir werden Ihren persönlichen Bereich mit den entsprechenden Buchungsangaben aktualisieren.
+Auf dem Kartenreiter "Booking History" können Sie sich über den Stand Ihrer Buchungsabwicklung informieren.
+<br>
+Falls Sie weitere Fragen haben, haben Sie die Möglichkeit uns eine Textmessage zu schicken, die wir umgehend
+per e-Mail beantworten.
+Sie können uns außerdem telefonisch unter +33 (0)4 93 65 70 28 erreichen. 
+<% end %>
+<% if langu == 'EN' %>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus vulputate neque, interdum dapibus tellus aliquam a. Sed convallis enim eu nibh pharetra non pellentesque erat eleifend. Sed urna neque, feugiat nec tempor quis, tempus sed nisi. Vestibulum auctor velit et massa vulputate molestie. Quisque mattis convallis quam, sed lobortis purus dignissim eu. Suspendisse aliquet porttitor enim, non feugiat ligula porta eget. In pharetra feugiat augue. Pellentesque placerat tincidunt mattis. Morbi sed quam sit amet mauris imperdiet tincidunt sit amet sit amet turpis. 
+<% end %>
+<% if langu == 'FR' %>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus vulputate neque, interdum dapibus tellus aliquam a. Sed convallis enim eu nibh pharetra non pellentesque erat eleifend. Sed urna neque, feugiat nec tempor quis, tempus sed nisi. Vestibulum auctor velit et massa vulputate molestie. Quisque mattis convallis quam, sed lobortis purus dignissim eu. Suspendisse aliquet porttitor enim, non feugiat ligula porta eget. In pharetra feugiat augue. Pellentesque placerat tincidunt mattis. Morbi sed quam sit amet mauris imperdiet tincidunt sit amet sit amet turpis. 
+<% end %>
+  </div>
+
 </div>
 
 

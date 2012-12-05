@@ -22,6 +22,7 @@ class PagesController < ApplicationController
   end
 
   def apx
+   correct_user
    @title = "Dummy Page"
    @user = User.find_by_id(params[:umessage][:user_id])
    
