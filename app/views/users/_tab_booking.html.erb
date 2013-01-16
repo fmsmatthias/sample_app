@@ -1,0 +1,73 @@
+    <h3>Your booking Details:</h3>
+    <br>  
+    <% if @booking.nil? %>
+      <p>No Booking Details Available</p>
+      <br><br><br>
+    <% else %>
+       <div class="row">
+         <div class="span2">
+           <p><strong>Arrival:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.adate %> </p> 
+         </div>
+         <div class="span2">
+           <p><strong>Departure:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.ddate %> </p>
+         </div>
+       </div> <!--row -->
+
+       <div class="row">
+         <div class="span2">
+           <p><strong>No. Nights:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.nights %> </p> 
+         </div>
+         <div class="span2">
+           <p><strong>No. People:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.people %> </p>
+         </div>
+       </div> <!--row -->
+
+       <div class="row">
+         <div class="span2">
+           <p><strong>Total Price:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.price %> </p> 
+         </div>
+         <div class="span2">
+           <p><strong>Downpayment:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.downp %> </p>
+         </div>
+       </div> <!--row -->
+
+       <div class="row">
+         <div class="span2">
+           <p><strong>Final Cleaning:</strong></p>
+         </div>
+         <div class="span2">
+           <p><%= @booking.cleaning %> </p> 
+         </div>
+       </div> <!--row -->
+
+        <% if is_admin? %>
+          <%= link_to "Delete", edit_address_path  %>
+        <% end %>
+    <% end %>
+
+    <% if is_admin? %>
+      <% if @booking.nil? %>
+        <%= link_to "Add Booking Details", new_user_booking_path(@user) , class: "btn btn btn-primary" %>
+      <% else %>
+       <%= link_to "Change Booking Details", edit_user_booking_path(@user) , class: "btn btn btn-primary" %>      
+      <% end %>
+    <% end %>
+

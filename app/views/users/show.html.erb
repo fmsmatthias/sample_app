@@ -26,6 +26,7 @@
     <li class="active"><a href="#person">Personal Data</a></li>
     <li><a href="#booking">Your Booking</a></li>
     <li><a href="#history">Booking History</a></li>
+    <li><a href="#findus">Directions</a></li>
     </ul>
 
 
@@ -35,198 +36,33 @@
 <div class="tab-pane active" id="person">
   <br>
   <div class="fms2">
-    <% if @address.nil? %>
-           <p>your address is not maintained, please maintain address here</p>
-           <br><br><br>
-           <%= link_to "Create Address", edit_address_path , class: "btn btn btn-primary" %>
-    <% else %>
-         <h3>Your Personal Data:</h3>
-         <br>
-
-         <div class="row"> 
-
-           <div class="span2">
-             <p><strong>First Name:</strong></p>
-           </div>
-           <div class="span2">
-             <p><%= @address.fname %> </p> 
-           </div>
-           <div class="span2">
-             <p><strong>Last Name:</strong></p>
-           </div>
-           <div class="span2">
-             <p><%= @address.lname %> </p>
-           </div>
-         </div> <!--row -->
-         
-         <div class="row">
-           <div class="span2">
-             <p><strong>Street:</strong></p>
-           </div>
-           <div class="span2">
-             <p><%= @address.streetno %> </p> 
-           </div>
-           <div class="span2">
-             <p><strong>Phone</strong></p>
-           </div>
-           <div class="span3">
-             <p><%= @address.phone1 %> </p>
-           </div>
-         </div>   <!--row -->
-
-         <div class="row">
-           <div class="span2">
-             <p><strong>City:</strong></p>
-           </div>
-           <div class="span2">
-             <p><%= @address.city %> </p> 
-           </div>
-           <div class="span2">
-             <p><strong>Mobile</strong> </p>
-           </div>
-           <div class="span3">
-             <p><%= @address.phonem %> </p>
-           </div>
-         </div> <!--row -->
-
-
-         <div class="row">
-           <div class="span2">
-             <p><strong>Zip:</strong></p>
-           </div>
-           <div class="span2">
-             <p><%= @address.zip %> </p> 
-           </div>
-           <div class="span2">
-             <p><strong>Country:</strong></p>
-           </div>
-           <div class="span2">
-             <p><%= @address.country %> </p> 
-           </div> 
-         </div> <!--row -->
-
-       <div class="row">
-         <div class="span2 ">
-           <br>
-           <%= link_to "Change Address", edit_address_path , class: "btn btn btn-primary" %>
-         </div>
-       </div> <!--row -->
-    <% end %>
-         
+   <%= render 'tab_person' %>
   </div> <!--fms2 frame -->
 </div> <!-- tab -->
 
 <div class="tab-pane" id="booking">
   <br>
   <div class="fms2">
-
-    <h3>Your booking Details:</h3>
-    <br>  
-    <% if @booking.nil? %>
-      <p>No Booking Details Available</p>
-      <br><br><br>
-    <% else %>
-       <div class="row">
-         <div class="span2">
-           <p><strong>Arrival:</strong></p>
-         </div>
-         <div class="span2">
-           <p><%= @booking.adate %> </p> 
-         </div>
-         <div class="span2">
-           <p><strong>Departure:</strong></p>
-         </div>
-         <div class="span2">
-           <p><%= @booking.ddate %> </p>
-         </div>
-       </div> <!--row -->
-
-       <div class="row">
-         <div class="span2">
-           <p><strong>No. Nights:</strong></p>
-         </div>
-         <div class="span2">
-           <p><%= @booking.nights %> </p> 
-         </div>
-         <div class="span2">
-           <p><strong>No. People:</strong></p>
-         </div>
-         <div class="span2">
-           <p><%= @booking.people %> </p>
-         </div>
-       </div> <!--row -->
-
-       <div class="row">
-         <div class="span2">
-           <p><strong>Total Price:</strong></p>
-         </div>
-         <div class="span2">
-           <p><%= @booking.price %> </p> 
-         </div>
-         <div class="span2">
-           <p><strong>Downpayment:</strong></p>
-         </div>
-         <div class="span2">
-           <p><%= @booking.downp %> </p>
-         </div>
-       </div> <!--row -->
-
-       <div class="row">
-         <div class="span2">
-           <p><strong>Final Cleaning:</strong></p>
-         </div>
-         <div class="span2">
-           <p><%= @booking.cleaning %> </p> 
-         </div>
-       </div> <!--row -->
-
-        <% if is_admin? %>
-          <%= link_to "Delete", edit_address_path  %>
-        <% end %>
-    <% end %>
-
-    <% if is_admin? %>
-      <% if @booking.nil? %>
-        <%= link_to "Add Booking Details", new_user_booking_path(@user) , class: "btn btn btn-primary" %>
-      <% else %>
-       <%= link_to "Change Booking Details", edit_user_booking_path(@user) , class: "btn btn btn-primary" %>      
-      <% end %>
-    <% end %>
-
-
+   <%= render 'tab_booking' %>
   </div> <!-- frame -->
 </div> <!-- tab -->
 
 <div class="tab-pane" id="history">
   <br>
   <div class="fms2">
-    <h3>Your Booking History:</h3>
-    <br>  
-    <% if @ustatus.nil? %>
-         <p>No status available</p>
-         <br><br><br>
-    <% else %>
-      <% @ustatus.each do |status|  %>
-        <div class="row">
-          <div class="span2">
-            <p><%= status.sdate %> </p> 
-          </div>
-          <div class="span4">
-            <p><%= status_text(status.status) %> </p> 
-          </div>
-        
-        <% if is_admin? %>
-        <%= link_to 'Delete', status, confirm: 'Are you sure?', method: :delete %>
-        <% end %>
-        </div>
-      <% end %>
-    <% end %>
-      <% if is_admin? %>
-        <%= link_to "Add Status", edit_ustatus_path , class: "btn btn btn-primary" %>
-      <% end %>
-
+   <%= render 'tab_history' %>
   </div>  <!-- fms2 frame -->  
 </div> <!-- tab -->
+
+
+  <div class="tab-pane" id="findus">
+    <br>
+    <div class="fms2">
+   <%= render 'tab_findus' %>
+    </div>  <!-- fms2 frame -->  
+  </div> <!-- tab findus -->
+
+
 
 
     <script>
@@ -243,40 +79,7 @@
 
 <!-- Message form --> 
 
-<div class="row">
-  <div class="span4">
-<p>Any questions?</p>
-    <%= form_for(:umessage, url: apx_path, method: "GET") do |f| %>
-
-      <%= f.hidden_field :user_id, :value => @user.id %>
-      <%= f.text_area :text %>
-<br>
-      <%= f.submit "Send Message", confirm: 'Send Message?', class: "btn btn-primary" %>
-
-    <% end %>
-
-</div>
-  <div class="span6">
-<br><br>
-<% if langu == 'DE' %>
-Bitte teilen Sie uns Ihre vollständige Adresse, sowie Festnetz- und Mobiltelefonnummer mit.
-Wir werden Ihren persönlichen Bereich mit den entsprechenden Buchungsangaben aktualisieren.
-Auf dem Kartenreiter "Booking History" können Sie sich über den Stand Ihrer Buchungsabwicklung informieren.
-<br>
-Falls Sie weitere Fragen haben, haben Sie die Möglichkeit uns eine Textmessage zu schicken, die wir umgehend
-per e-Mail beantworten.
-Sie können uns außerdem telefonisch unter +33 (0)4 93 65 70 28 erreichen. 
-<% end %>
-<% if langu == 'EN' %>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus vulputate neque, interdum dapibus tellus aliquam a. Sed convallis enim eu nibh pharetra non pellentesque erat eleifend. Sed urna neque, feugiat nec tempor quis, tempus sed nisi. Vestibulum auctor velit et massa vulputate molestie. Quisque mattis convallis quam, sed lobortis purus dignissim eu. Suspendisse aliquet porttitor enim, non feugiat ligula porta eget. In pharetra feugiat augue. Pellentesque placerat tincidunt mattis. Morbi sed quam sit amet mauris imperdiet tincidunt sit amet sit amet turpis. 
-<% end %>
-<% if langu == 'FR' %>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus vulputate neque, interdum dapibus tellus aliquam a. Sed convallis enim eu nibh pharetra non pellentesque erat eleifend. Sed urna neque, feugiat nec tempor quis, tempus sed nisi. Vestibulum auctor velit et massa vulputate molestie. Quisque mattis convallis quam, sed lobortis purus dignissim eu. Suspendisse aliquet porttitor enim, non feugiat ligula porta eget. In pharetra feugiat augue. Pellentesque placerat tincidunt mattis. Morbi sed quam sit amet mauris imperdiet tincidunt sit amet sit amet turpis. 
-<% end %>
-  </div>
-
-</div>
-
+<%= render 'form_message' %>
 
    
     </div>

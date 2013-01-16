@@ -6,6 +6,7 @@ SampleApp::Application.initialize!
 
 ActionMailer::Base.delivery_method = :smtp
 
+
 ActionMailer::Base.smtp_settings = {
     :address        => ENV['FMS_ADR'],
     :domain         => ENV['FMS_DOM'],

@@ -65,6 +65,11 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def send_pdf
+    send_file '/home/railsway/downloads/huge.zip', :type=>"application/zip" 
+   redirect_to root_path
+  end
+
   private
 
     def signed_in_user

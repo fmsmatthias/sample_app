@@ -1,0 +1,25 @@
+    <h3>Your Booking History:</h3>
+    <br>  
+    <% if @ustatus.nil? %>
+         <p>No status available</p>
+         <br><br><br>
+    <% else %>
+      <% @ustatus.each do |status|  %>
+        <div class="row">
+          <div class="span2">
+            <p><%= status.sdate %> </p> 
+          </div>
+          <div class="span4">
+            <p><%= status_text(status.status) %> </p> 
+          </div>
+        
+        <% if is_admin? %>
+        <%= link_to 'Delete', status, confirm: 'Are you sure?', method: :delete %>
+        <% end %>
+        </div>
+      <% end %>
+    <% end %>
+      <% if is_admin? %>
+        <%= link_to "Add Status", edit_ustatus_path , class: "btn btn btn-primary" %>
+      <% end %>
+
