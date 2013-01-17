@@ -4,17 +4,17 @@
          <p>No status available</p>
          <br><br><br>
     <% else %>
-      <% @ustatus.each do |status|  %>
+      <% @ustatus.each do |ustatus|  %>
         <div class="row">
           <div class="span2">
-            <p><%= status.sdate %> </p> 
+            <p><%= ustatus.sdate %> </p> 
           </div>
           <div class="span4">
-            <p><%= status_text(status.status) %> </p> 
+            <p><%= status_text(ustatus) %> </p> 
           </div>
         
         <% if is_admin? %>
-        <%= link_to 'Delete', status, confirm: 'Are you sure?', method: :delete %>
+        <%= link_to 'Delete', ustatus, confirm: 'Are you sure?', method: :delete %>
         <% end %>
         </div>
       <% end %>

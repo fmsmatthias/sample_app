@@ -8,13 +8,12 @@ ActionMailer::Base.delivery_method = :smtp
 
 
 ActionMailer::Base.smtp_settings = {
-    :address        => ENV['FMS_ADR'],
-    :domain         => ENV['FMS_DOM'],
+    :address        => 'smtp.strato.com', ENV['FMS_ADR'],
+    :domain         => 'www.biot06.com',  ENV['FMS_DOM'],
     :port           => 587,
-    :user_name      => ENV['FMS_USR'],
-    :password       => ENV['FMS_PWR'],
+    :user_name      => 'studio@biot06.com', ENV['FMS_USR'],
+    :password       => '9%wetter65x',       ENV['FMS_PWR'],
     :authentication => :plain
 }
-
 
 

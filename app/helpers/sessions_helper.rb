@@ -11,18 +11,28 @@ module SessionsHelper
     end
   end
 
-def status_text(status)
+  def status_text(status)
   #localise language from cookie
-  l_langu = langu 
-  status = Statusvalue.where("status = ? AND langu = ?",status ,l_langu).first
-  if status.nil?
-    text = "missing text"
-  else
-    text = status.text
-  end
+    l_langu = langu
+    l_status = status.status
+    @status = Statusvalue.find_by_status_and_langu(l_status, l_langu)   
+    if @status.nil?
+      text = l_status
+    else
+      text = @status.text
+    end
   end
 
-  
+  def check_status?
+# directions to apartment visible only if downpayment received
+    ustatus = Ustatus.where("user_id = ? AND status = 3",current_user.id).first
+    if ustatus.nil?
+      false
+    else
+      true
+    end
+  end
+
   def langu
     @langu = read_langu_cookie
   end

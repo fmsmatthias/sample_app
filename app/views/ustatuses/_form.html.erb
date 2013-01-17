@@ -9,7 +9,7 @@
 
     <br><br>
     <%= f.label :Status %>
-    <%= f.collection_select(:status, Statusvalue.where("langu= 'EN'"), :id, :text ) %>
+    <%= f.collection_select(:status, Statusvalue.where("langu= 'EN'"), :status, :text ) %>
     <br>
     <%= f.label :Date %>
     <%= f.number_field :sdate %>

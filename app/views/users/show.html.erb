@@ -26,7 +26,9 @@
     <li class="active"><a href="#person">Personal Data</a></li>
     <li><a href="#booking">Your Booking</a></li>
     <li><a href="#history">Booking History</a></li>
+    <% if check_status? %>
     <li><a href="#findus">Directions</a></li>
+    <% end %>
     </ul>
 
 
@@ -54,14 +56,14 @@
   </div>  <!-- fms2 frame -->  
 </div> <!-- tab -->
 
-
-  <div class="tab-pane" id="findus">
-    <br>
-    <div class="fms2">
-   <%= render 'tab_findus' %>
-    </div>  <!-- fms2 frame -->  
-  </div> <!-- tab findus -->
-
+  <% if check_status? %>
+    <div class="tab-pane" id="findus">
+      <br>
+      <div class="fms2">
+        <%= render 'tab_findus' %>
+      </div>  <!-- fms2 frame -->  
+    </div> <!-- tab findus -->
+  <% end %>
 
 
 
