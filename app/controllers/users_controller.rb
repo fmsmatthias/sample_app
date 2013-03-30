@@ -67,8 +67,37 @@ class UsersController < ApplicationController
 
   def send_pdf
     send_file '/home/railsway/downloads/huge.zip', :type=>"application/zip" 
-   redirect_to root_path
+    redirect_to root_path
   end
+
+  def changepwd
+    correct_user
+    @user = User.find(params[:id])
+  end
+
+  def changepwdupd
+    @user = User.find(params[:id])
+    user = User.authenticate(@user.email, params[:changepwd][:password])
+    if user.nil?
+      flash[:error] = "Password not correct"  
+      render 'changepwd'
+    else
+ #     if params[:changepwd][:new_password] == params[:changepwd][:password_confirmation]
+     @user.password = params[:changepwd][:new_password]
+     @user.password_confirmation = params[:changepwd][:password_confirmation]  
+     if @user.update_attributes(params[:user])
+      flash[:success] = "password successfully changed"
+      sign_in @user
+      redirect_to @user
+      else
+        flash[:error] = "Passwords don't match or too small"  
+        render 'changepwd'
+      end
+    end
+    
+  end
+
+
 
   private
 

@@ -1,7 +1,7 @@
     <% if @address.nil? %>
            <p>your address is not maintained, please maintain address here</p>
            <br><br><br>
-           <%= link_to "Create Address", edit_address_path , class: "btn btn btn-primary" %>
+           <%= link_to "Create Address", edit_address_path , class: "btn btn btn-info" %>
     <% else %>
          <h3>Your Personal Data:</h3>
          <br>
@@ -69,9 +69,10 @@
          </div> <!--row -->
 
        <div class="row">
-         <div class="span2 ">
+         <div class="span4 ">
            <br>
-           <%= link_to "Change Address", edit_address_path , class: "btn btn btn-primary" %>
+           <%= link_to "Change Address", edit_address_path , class: "btn btn btn-info" %>
+           <%= link_to "Change Password", changepwd_user_path , class: "btn btn btn-info" %>
          </div>
        </div> <!--row -->
     <% end %>

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation, :admin
+  attr_accessible :name, :email, :password, :password_confirmation
   
   has_one :booking, dependent: :destroy
   has_one :address, dependent: :destroy
@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
                        :length       => { :within => 6..40 }
 
   before_save :encrypt_password
+  before_update :encrypt_password
   before_save { |user| user.email = email.downcase }
 #  before_save :create_remember_token
 

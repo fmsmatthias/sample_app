@@ -1,6 +1,5 @@
-<div class="row">
-  <div class="span7 offset2">
-
+<div class="row" align="center">
+<div id="containerform">
 <%= form_for(@address) do |f| %>
 
          <%= f.hidden_field :user_id %>
@@ -30,7 +29,7 @@
        <%= f.text_field :phonem %>
        <br>
        <br>
-      <%= f.submit "Create Address", class: "btn btn-primary" %>
+      <%= f.submit "Create Address", class: "btn btn-info" %>
       <%= link_to 'Back', @user %>
 <br>
 <% end %>

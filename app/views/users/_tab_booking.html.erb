@@ -65,9 +65,9 @@
 
     <% if is_admin? %>
       <% if @booking.nil? %>
-        <%= link_to "Add Booking Details", new_user_booking_path(@user) , class: "btn btn btn-primary" %>
+        <%= link_to "Add Booking Details", new_user_booking_path(@user) , class: "btn btn btn-info" %>
       <% else %>
-       <%= link_to "Change Booking Details", edit_user_booking_path(@user) , class: "btn btn btn-primary" %>      
+       <%= link_to "Change Booking Details", edit_user_booking_path(@user) , class: "btn btn btn-info" %>      
       <% end %>
     <% end %>
 

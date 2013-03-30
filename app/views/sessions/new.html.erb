@@ -1,13 +1,12 @@
 <% provide(:title, "Sign in") %>
-<br>
-<br>
-<h2><strong>Sign in</h2></strong>
-<br>
+
+<div class="row" align="center">
 <br>
 <br>
 <br>
-<div class="row">
-  <div class="span4 offset3">
+  <h2><strong>Sign in</h2></strong> 
+  <div id="containerform">
+   
     <%= form_for(:session, url: sessions_path) do |f| %>
 
           <% flash.each do |key, value| %>
@@ -22,7 +21,7 @@
       <%= f.label :password %>
       <%= f.password_field :password %>
 <br>
-      <%= f.submit "Sign in", class: "btn btn-primary" %>
+      <%= f.submit "Sign in", class: "btn btn-info" %>
     <% end %>
 
     New user? <%= link_to "Sign up now!", signup_path %>

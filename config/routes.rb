@@ -5,6 +5,11 @@ SampleApp::Application.routes.draw do
   resources :rates
   resources :users do
     resources :bookings
+    member do
+     get  'changepwd'
+     post 'changepwdupd'
+     put  'changepwdupd'
+    end
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :addresses 

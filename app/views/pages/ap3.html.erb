@@ -1,4 +1,3 @@
-
     <ul class="nav nav-pills" id="FMS2tab">
       <li class="active"><a href="#Biot">Biot</a></li>
       <li><a href="#Glass">Glass Blowing</a></li>
@@ -8,14 +7,6 @@
 
 <hr>
 <br>
-
-    <script>
-      $('#FMS2tab a').click(function (e) {
-      e.preventDefault();
-      $(this).tab('show');
-      })
-    </script>
-
 <div class="tab-content">
 
   <div class="tab-pane active" id="Biot">
@@ -26,8 +17,30 @@
         </ul>
       </div>
     </div>
-    The official website of Biot gives an overview of the community. it shows all administrative links
-    and contains the Biot event calendar
+<% if langu == 'EN' %>
+          Biot’s history dates back to the Roman Empire when it was officially mentioned for the first   
+          time. And even now, one cannot fail to recognise that the history of the old village ("le vieux 
+          village") has been quite agitated. Today, this historic centre provides a perfect setting for 
+          typical village life in the south of France and thus is a popular place for tourists. 
+          Nonetheless, Biot 
+          has been able to retain its individuality and authenticity which is reflected in its narrow
+          streets, cobbled roads and many other hidden charms. 
+     
+        No matter if you want to take a stroll at the beach, in one of the near 
+	parcs or along the river "la Brague", on foot, by bus or by car it's all 
+	just a few minutes away. On the other hand you can enjoy the day in the 
+	village, on one of it's plenty places or on the terrace of a café or
+	restaurant.
+<% end %>
+<% if langu == 'FR' %>
+Les premières traces humaines de Biot remontent à l'antiquité, il y a plus de 2000 ans. Aujourd'hui on constate que ce village était témoin de beaucoup d'événements historiques qui en ont formé un lieu unique de la Côte d'Azur. Le centre historique, le vieux village, est devenu un lieu d'attractions pour les touristes mais aussi pour les gens du coin, car Biot a toujours su préserver son caractère authentique et individuel à l'abri du tourisme de masse.
+Peu importe si vous voulez vous promenez à la plage, dans un des nombreux parcs ou au bord de la Brague - la petite rivière qui coule à Biot - tout est faisable à pied, en bus ou en prenant la voiture. Pour faire plus simple, vous pouvez également passer une journée agréable au village. Sur une de ses belles places ou sur la térasse d'un bar ou d'un restaurant.
+
+<% end %>
+<% if langu == 'DE' %>
+Biot wurde bereits zur Römerzeit erstmals urkundlich erwähnt und man erkennt noch heute, dass das alte Dorf, le vieux village, bereits eine ganze Menge erlebt hat. Der historische Altstadt-Kern ist heute Schauplatz des typischen Dorflebens im Süden Frankreichs und in der Sommersaison ein beliebter Ort für Touristen. Dabei wurde Biot gleichzeitig vom Massentourismus verschont und konnte dadurch seine Individualität wahren.
+Ganz gleich ob man einen Spaziergang am Strand, in einem der nahegelegenden Parks oder am Ufer der Brague unternimmt; alles ist zu Fuß, mit dem Bus oder mit dem Auto innerhalb weniger Minuten zu erreichen. Man kann den Tag aber auch einfach im Dorf genießen, am besten auf einem der zahlreichen Plätze oder auf der Terasse einer Bar oder eines Restaurants.
+<% end %>
     <br>
     <table class="table">  
       <thead>  
@@ -44,6 +57,10 @@
         <tr>  
           <td>Biot Tourism</td>  
           <td><%= link_to "www.biot-tourisme.com","http://www.biot-tourisme.com", :target => "_blank" %> </td>  
+        </tr>  
+        <tr>  
+          <td>Anglo Info</td>  
+          <td><%= link_to "www.angloinfo.com","http://www.angloinfo.com", :target => "_blank" %> </td>  
         </tr>  
       </tbody>  
     </table>
@@ -64,7 +81,7 @@
       ist die "Verrerie de Biot".
       Das besondere Markenzeichen des Betriebes ist eigentlich ein Fehler im Herstellungsverfahren, der dafür sorgt, 
       dass kleine Luftblasen in das noch flüssige Glas eingearbeitet werden. Dies verleiht dem fertigen 
-      Produkt einen besonderen Charme und Einzigartigkeit. Darüberhinaus findet man im Dorf und in der 
+      Produkt einen besonderen Charme und Einzigartigkeit. Darüber hinaus findet man im Dorf und in der 
       unmittelbaren Umgebung noch zahlreiche weitere, kleinere Glasbläsereien, denen man bei der Arbeit zusehen
       kann, und die ihre Produkte in kleinen Boutiquen zum Verkauf anbieten. 
     <% end %>
@@ -133,6 +150,8 @@
       <div class="box3">
       </div>
       <div class="box2">
+
+    <% if langu == 'DE' %>
         Der bekannte französische Maler Fernand Leger(1881-1955) lebte und malte von 1949 bis kurz 
         vor seinem Tode in Biot. Das ihm gewidmete National-Museum "Musée Fernad Leger" liegt ca. 2 km südlich 
         des Dorfes. 
@@ -140,7 +159,17 @@
         In Antibes, am Ende der Altstadt, befindet sich das Picasso-Museum. Es liegt unmittelbar am Meer 
         und man hat von dort einen tollen Ausblick auf die Kuestenorte und das Cap d'Antibes.
         <hr>
-        In Nizza gibt es darueber hinaus eine Vielzahl weiterer Museen und Galerien.
+        Darüber hinaus gibt es in der ganzen Region eine Vielzahl von Museen und Galerien
+<% end %>
+    <% if langu == 'FR' %>
+Le célèbre peintre français, Fernand Leger, né en 1881, s'est installé à Biot en 1949 et y restait jusque peu avant sa mort en 1955. " Le Musée National Fernand Leger" de Biot se situe à 1km au sud du village et présente une vaste collection de tableaux ainsi que des céramiques auxquels l'artiste consacrait une grande partie de sa vie (En 2007 le musée reste fermé pour travaux). Dans le vieux village on trouve également un petit musée qui expose les oeuvres des artistes locals et qui raconte sur l'histoire et les traditions biotoises. 
+<hr>
+<% end %>
+    <% if langu == 'EN' %>
+The famous french artist Fernand Leger (1881-1955) lived and painted in Biot until 1949. The dedicated museum "Musée Fernand Leger" is located 2 km south of the village. Unfortunately the museum is closed for reconstruction and modernisation at the moment but should reopen in 2008. A few of Fernand Leger's works are currently shown in the "Musée de Céramique" in the village, which also informs about Biot's history in a permanent exhibition.
+<hr>
+You will find more museums in Antibes (Picasso) and of course in Nice and the whole Alpes-Maritimes
+<% end %>
       </div>
     </div>
     <table class="table">  
@@ -158,11 +187,13 @@
           </tr>  
           <tr>  
             <td>Picasso Antibes</td>  
-            <td><%= link_to "www.biot-tourisme.com","http://www.biot-tourisme.com", :target => "_blank" %> </td>  
+            <td><%= link_to "http://www.musees-nationaux-alpesmaritimes.fr/picasso/",
+                    "http://www.musees-nationaux-alpesmaritimes.fr/picasso/", :target => "_blank" %> </td>  
           </tr>  
           <tr>  
-            <td>Nizza maessig</td>  
-            <td><%= link_to "www.biot-tourisme.com","http://www.biot-tourisme.com", :target => "_blank" %> </td>  
+            <td>In the region</td>  
+            <td><%= link_to "http://www.musees-nationaux-alpesmaritimes.fr/",
+                      "http://www.musees-nationaux-alpesmaritimes.fr/", :target => "_blank" %> </td>  
           </tr>  
 
       </tbody>  
@@ -218,13 +249,15 @@
       </tbody>  
     </table>
   </div> <!-- tab Marineland-->
-</div> <!-- tab content->
 
+</div> <!-- tab content -->
 
-
-
-
-
+    <script>
+      $('#FMS2tab a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+      })
+    </script>
 
 
 
