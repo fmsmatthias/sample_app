@@ -7,13 +7,14 @@ SampleApp::Application.initialize!
 ActionMailer::Base.delivery_method = :smtp
 
 ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.strato.com',
-    :domain         => 'www.biot06.com',  
-    :port           => 587,
-    :user_name      => 'studio@biot06.com', 
-    :password       => '69wetter06xx',       
+    :address => ENV['FMS_ADR'],
+    :domain => ENV['FMS_DOM'],
+    :port => 587,
+    :user_name => ENV['FMS_USR'],
+    :password => ENV['FMS_PWR'],
     :authentication => :plain
 }
+
 
 
 
