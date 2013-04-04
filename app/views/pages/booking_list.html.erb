@@ -1,0 +1,23 @@
+Das ist die Booking Liste
+         <hr>
+
+        <table>
+          <tr>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Arrival</th>
+            <th>Departure</th>
+
+          </tr>
+            <% @booking.each do |booking| %>
+            <tr>
+              <td><%= booking.lname =%></td>
+              <td><%= booking.fname =%></td>
+              <td><%= booking.adate =%></td>
+              <td><%= booking.ddate =%></td>
+              
+            </tr>
+         <% end  %>
+
+        </table>
+

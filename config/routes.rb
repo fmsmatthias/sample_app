@@ -28,6 +28,7 @@ SampleApp::Application.routes.draw do
   match '/ap3',          :to => 'pages#ap3'
   match '/ap9',          :to => 'pages#ap9'
   match '/apx',          :to => 'pages#apx'
+  match '/booking_list', :to => 'pages#booking_list'
   match '/contact',      :to => 'pages#contact'
   match '/langude',      :to => 'pages#langude'
   match '/languen',      :to => 'pages#languen'

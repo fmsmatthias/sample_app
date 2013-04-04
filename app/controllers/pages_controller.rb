@@ -30,6 +30,26 @@ class PagesController < ApplicationController
    redirect_to request.referer, :flash => { :success => "E-mail has been sent!" }
   end
 
+  def booking_list
+    @names = Address.order("lname")
+
+    @booking = []
+    
+    @names.each do |name|
+    book = Blist.new
+    bdet = Booking.find_by_user_id(name.user_id)
+ 
+    book.fname = name.fname
+    book.lname = name.lname
+    if not bdet.nil?
+    book.adate = bdet.adate
+    book.ddate = bdet.ddate
+    end
+    @booking += [book]
+    end
+
+  end
+
   def langude
     set_langu('DE')
     redirect_to request.referer
