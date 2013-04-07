@@ -1,23 +1,35 @@
-Das ist die Booking Liste
-         <hr>
 
-        <table>
-          <tr>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Arrival</th>
-            <th>Departure</th>
 
-          </tr>
-            <% @booking.each do |booking| %>
+        <table class="table table-hover">
+          <thead>
             <tr>
-              <td><%= booking.lname =%></td>
-              <td><%= booking.fname =%></td>
-              <td><%= booking.adate =%></td>
-              <td><%= booking.ddate =%></td>
-              
+              <th>Last Name</th>
+              <th>First Name</th>
+              <th>Arrival</th>
+              <th>Departure</th>
+              <th>NoNights</th>
+              <th>Nopeople</th>
+	      <th>Price</th>
+              <th>Cleaning</th>
+              <th>Downpayment</th>
             </tr>
-         <% end  %>
+          </thead> 
+          <tbody>
+            <% @booklist.each do |booking| %>
+              <tr>
+                <td><%= booking.lname =%></td>
+                <td><%= booking.fname =%></td>
+                <td><%= booking.adate =%></td>
+                <td><%= booking.ddate =%></td>
+                <td><%= booking.nights =%></td>
+                <td><%= booking.people =%></td>
+                <td><%= number_to_currency(booking.price, :unit => "€") =%></td>
+                <td><%= number_to_currency(booking.cleaning, :unit => "€")  =%></td>
+                <td><%= number_to_currency(booking.downp, :unit => "€")  =%></td>
 
+              </tr>
+            <% end  %>
+          </tbody>
         </table>
+
 

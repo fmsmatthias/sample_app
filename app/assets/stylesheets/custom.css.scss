@@ -278,6 +278,7 @@ a.button2 {
   cursor: pointer;
   text-align: left;
   text-decoration: none;
+  min-height: 100px;
   -webkit-border-radius: .5em;
   -moz-border-radius: .5em;
   border-radius: .5em;
@@ -471,8 +472,9 @@ border-width:0px;
 }
 
 .box1 {
+   border: 0px dashed #444;
     width: 150px;
-    height: 5px;
+    min-height: 150px;
     vertical-align: top;
     display: inline-block;
     text-align: left;

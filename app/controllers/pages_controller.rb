@@ -33,7 +33,7 @@ class PagesController < ApplicationController
   def booking_list
     @names = Address.order("lname")
 
-    @booking = []
+    @booklist = []
     
     @names.each do |name|
     book = Blist.new
@@ -42,10 +42,15 @@ class PagesController < ApplicationController
     book.fname = name.fname
     book.lname = name.lname
     if not bdet.nil?
-    book.adate = bdet.adate
-    book.ddate = bdet.ddate
+    book.adate = bdet.adate.strftime("%m/%d/%Y")
+    book.ddate = bdet.ddate.strftime("%m/%d/%Y")
+    book.nights = bdet.nights
+    book.people = bdet.people
+    book.cleaning = bdet.cleaning
+    book.price = bdet.price
+    book.downp = bdet.downp
     end
-    @booking += [book]
+    @booklist += [book]
     end
 
   end
