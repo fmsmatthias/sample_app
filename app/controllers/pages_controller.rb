@@ -31,6 +31,7 @@ class PagesController < ApplicationController
   end
 
   def booking_list
+    if is_admin?
     @names = Address.order("lname")
 
     @booklist = []
@@ -52,6 +53,9 @@ class PagesController < ApplicationController
     end
     @booklist += [book]
     end
+else
+   redirect_to signin_path
+end
 
   end
 

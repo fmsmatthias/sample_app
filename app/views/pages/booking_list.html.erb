@@ -1,17 +1,33 @@
+<script>
+$(document).ready(function() {
+    $('#pages').dataTable( {
+        "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>"
+    } );
+} );
+
+$.extend( $.fn.dataTableExt.oStdClasses, {
+    "sWrapper": "dataTables_wrapper form-inline"
+} );
 
 
-        <table class="table table-hover">
+$(document).ready(function(){
+	$('#pages').dataTable();
+});
+
+</script>
+
+        <table id="pages" cellpadding="0" cellspacing="0" border="0" class="table table-bordered">
           <thead>
             <tr>
-              <th>Last Name</th>
-              <th>First Name</th>
-              <th>Arrival</th>
-              <th>Departure</th>
-              <th>NoNights</th>
-              <th>Nopeople</th>
-	      <th>Price</th>
-              <th>Cleaning</th>
-              <th>Downpayment</th>
+              <th width="100">Last Name</th>
+              <th width="100">First Name</th>
+              <th>            Arrival</th>
+              <th width="070">            Departure</th>
+              <th width="060">            Nights</th>
+	      <th>            Price</th>
+              <th width="070">            Cleaning</th>
+              <th width="080">            Dwnpymnt</th>
+              <th>            Goto</th>
             </tr>
           </thead> 
           <tbody>
@@ -22,11 +38,11 @@
                 <td><%= booking.adate =%></td>
                 <td><%= booking.ddate =%></td>
                 <td><%= booking.nights =%></td>
-                <td><%= booking.people =%></td>
+                
                 <td><%= number_to_currency(booking.price, :unit => "€") =%></td>
                 <td><%= number_to_currency(booking.cleaning, :unit => "€")  =%></td>
                 <td><%= number_to_currency(booking.downp, :unit => "€")  =%></td>
-
+                <td><%= link_to =%></td>
               </tr>
             <% end  %>
           </tbody>
