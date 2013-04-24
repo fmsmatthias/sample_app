@@ -42,7 +42,7 @@ $(document).ready(function(){
                 <td><%= number_to_currency(booking.price, :unit => "€") =%></td>
                 <td><%= number_to_currency(booking.cleaning, :unit => "€")  =%></td>
                 <td><%= number_to_currency(booking.downp, :unit => "€")  =%></td>
-                <td><%= link_to =%></td>
+                <td><%= link_to "Edit", booking.user %></td>
               </tr>
             <% end  %>
           </tbody>

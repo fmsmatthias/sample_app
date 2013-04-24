@@ -15,6 +15,3 @@ ActionMailer::Base.smtp_settings = {
     :authentication => :plain
 }
 
-
-
-

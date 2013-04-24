@@ -27,6 +27,7 @@ class PagesController < ApplicationController
    @user = User.find_by_id(params[:umessage][:user_id])
    @text = params[:umessage][:text]
    UserMailer.smessage_email(@user, @text).deliver
+#   UserMailer.welcome_email(@user).deliver
    redirect_to request.referer, :flash => { :success => "E-mail has been sent!" }
   end
 
@@ -43,13 +44,14 @@ class PagesController < ApplicationController
     book.fname = name.fname
     book.lname = name.lname
     if not bdet.nil?
-    book.adate = bdet.adate.strftime("%m/%d/%Y")
-    book.ddate = bdet.ddate.strftime("%m/%d/%Y")
+    book.adate = bdet.adate.strftime("%d.%m.%Y")
+    book.ddate = bdet.ddate.strftime("%d.%m.%Y")
     book.nights = bdet.nights
     book.people = bdet.people
     book.cleaning = bdet.cleaning
     book.price = bdet.price
     book.downp = bdet.downp
+    book.user  = User.find_by_id(name.user_id)
     end
     @booklist += [book]
     end

@@ -3,7 +3,6 @@ class BookingsController < ApplicationController
 def new
 @user=User.find_by_id(params[:user_id])
 @booking=Booking.new
-@booking.user_id=@user.id
 end
 
   def create
@@ -28,15 +27,14 @@ end
   end
 
   def update
-     @address = Address.new(params[:address]) 
-     @user    = User.find_by_id(@address.user_id)
-     @address2 = Address.find_by_user_id(@address.user_id)
-      if @address2.update_attributes(params[:address])
-        flash[:success] = "Adress changed"
-        redirect_to @user
-      else
-        render 'edit'
-      end
+    @user    = User.find_by_id(params[:user_id])
+    @booking = Booking.find_by_user_id(params[:user_id])
+     if @booking.update_attributes(params[:booking])
+       flash[:success] = "Booking has been updated!"
+       redirect_to @user
+     else
+       render 'edit'
+    end
   end
 
 
