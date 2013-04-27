@@ -41,19 +41,20 @@ class PagesController < ApplicationController
     book = Blist.new
     bdet = Booking.find_by_user_id(name.user_id)
  
-    book.fname = name.fname
-    book.lname = name.lname
     if not bdet.nil?
-#    book.adate = bdet.adate.strftime("%d.%m.%Y")
-#    book.ddate = bdet.ddate.strftime("%d.%m.%Y")
-    book.adate = bdet.adate
-    book.ddate = bdet.ddate
-    book.nights = bdet.nights
-    book.people = bdet.people
-    book.cleaning = bdet.cleaning
-    book.price = bdet.price
-    book.downp = bdet.downp
-    book.user  = User.find_by_id(name.user_id)
+      book.fname = name.fname
+      book.lname = name.lname
+      book.adate = bdet.adate.strftime("%d.%m.%Y")
+      book.ddate = bdet.ddate.strftime("%d.%m.%Y")
+
+#      book.adate = bdet.adate
+#      book.ddate = bdet.ddate
+      book.nights = bdet.nights
+      book.people = bdet.people
+      book.cleaning = bdet.cleaning
+      book.price = bdet.price
+      book.downp = bdet.downp
+      book.user  = User.find_by_id(name.user_id)
     end
     @booklist += [book]
     end
