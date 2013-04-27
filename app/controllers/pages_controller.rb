@@ -33,35 +33,34 @@ class PagesController < ApplicationController
 
   def booking_list
     if is_admin?
-    @names = Address.order("lname")
-
-    @booklist = []
-    
-    @names.each do |name|
-    book = Blist.new
-    bdet = Booking.find_by_user_id(name.user_id)
- 
-    if not bdet.nil?
-      book.fname = name.fname
-      book.lname = name.lname
-      book.adate = bdet.adate.strftime("%d.%m.%Y")
-      book.ddate = bdet.ddate.strftime("%d.%m.%Y")
-
-#      book.adate = bdet.adate
-#      book.ddate = bdet.ddate
-      book.nights = bdet.nights
-      book.people = bdet.people
-      book.cleaning = bdet.cleaning
-      book.price = bdet.price
-      book.downp = bdet.downp
-      book.user  = User.find_by_id(name.user_id)
+      @names = Address.order("lname")
+      @booklist = []  
+      @names.each do |name|
+        book = Blist.new
+        bdet = Booking.find_by_user_id(name.user_id)
+        if not bdet.nil?
+          book.fname = name.fname
+          book.lname = name.lname
+          if not bdet.adate.nil?
+            book.adate = bdet.adate.strftime("%d.%m.%Y")
+          end
+          if not bdet.ddate.nil?
+            book.ddate = bdet.ddate.strftime("%d.%m.%Y")
+          end
+#         book.adate = bdet.adate
+#         book.ddate = bdet.ddate
+          book.nights = bdet.nights
+          book.people = bdet.people
+          book.cleaning = bdet.cleaning
+          book.price = bdet.price
+          book.downp = bdet.downp
+          book.user  = User.find_by_id(name.user_id)
+          @booklist += [book]      
+        end
+      end
+    else
+      redirect_to signin_path
     end
-    @booklist += [book]
-    end
-else
-   redirect_to signin_path
-end
-
   end
 
   def langude
