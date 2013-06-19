@@ -42,10 +42,10 @@ class PagesController < ApplicationController
           book.fname = name.fname
           book.lname = name.lname
           if not bdet.adate.nil?
-            book.adate = bdet.adate.strftime("%d.%m.%Y")
+            book.adate = bdet.adate.strftime("%Y.%m.%d")
           end
           if not bdet.ddate.nil?
-            book.ddate = bdet.ddate.strftime("%d.%m.%Y")
+            book.ddate = bdet.ddate.strftime("%Y.%m.%d")
           end
 #         book.adate = bdet.adate
 #         book.ddate = bdet.ddate

@@ -10,14 +10,19 @@
   <h1>Willkommen in  Biot</h1>
 <% end %>
 <br>
+        <div id="FMSCarousel2" class="carousel slide">
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="active item"><li><a><img src="/assets/intro_biot9.jpg"></a></li></div>
+            <div class="item"><li><a><img src="/assets/intro_biot7.jpg"></a></li></div>
+            <div class="item"><li><a><img src="/assets/intro_biot8.jpg"></a></li></div>
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+
 <br>
-
-<div  align="center">
-<%= image_tag("intro_biot9.jpg") %>
-</div>
-
-<br> <br> 
-
 
 <div id="container2">
 
@@ -86,4 +91,10 @@
   </div>
   <span class="stretch"></span>
 </div>
+    <script>
+      $(function(){
+      $('#FMSCarousel2').carousel();
+      });
+    </script>
+
 

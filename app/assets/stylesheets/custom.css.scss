@@ -507,7 +507,7 @@ border-width:0px;
 .boxhead {
     border: 0px dashed #444;
     width: 900px;
-    height: 050px;
+    height: 010px;
     vertical-align: top;
     display: inline-block;
     text-align: left;
@@ -566,6 +566,10 @@ table {
     clear: both;
 }
 
+.carousel .carousel-control { visibility: hidden; }
+.carousel .item {-webkit-transition: opacity 3s; -moz-transition: opacity 3s; -ms-transition: opacity 3s; -o-transition: opacity 3s; transition: opacity 3s;}
+.carousel .active.left {left:0;opacity:0;z-index:2;}
+.carousel .next {left:0;opacity:1;z-index:1;}
 
 /* in order to fix carousel-nav tab issue*/
 
