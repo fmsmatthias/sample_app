@@ -58,7 +58,11 @@
 }
 
 .hero-unit {
+  background-image: -webkit-linear-gradient(bottom, #C5E0F4 0%, #EAEFEE 100%);
   background-image: -moz-linear-gradient(bottom, #C5E0F4 0%, #EAEFEE 100%);
+  background-image: -o-linear-gradient(bottom, #C5E0F4 0%, #EAEFEE 100%);
+  background-image: -ms-linear-gradient(bottom, #C5E0F4 0%, #EAEFEE 100%);
+  background-image: -linear-gradient(bottom, #C5E0F4 0%, #EAEFEE 100%);
   margin-top: 0px;
   margin-bottom: 10px;
   label{width: 150px; float:left}
