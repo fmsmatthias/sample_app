@@ -58,16 +58,11 @@
          </div>
        </div> <!--row -->
 
-        <% if is_admin? %>
-          <%= link_to "Delete", edit_address_path  %>
-        <% end %>
     <% end %>
 
     <% if is_admin? %>
-      <% if @booking.nil? %>
-        <%= link_to "Add Booking Details", new_user_booking_path(@user) , class: "btn btn btn-info" %>
-      <% else %>
-       <%= link_to "Change Booking Details", edit_user_booking_path(@user) , class: "btn btn btn-info" %>      
-      <% end %>
+       <%= link_to "New Booking", new_user_booking_path(@user) , class: "btn btn btn-info" %>
+       <%= link_to "Change Booking", edit_user_booking_path(@user) , class: "btn btn btn-info" %>       
     <% end %>
+    <%= link_to "All Bookings", user_bookings_path(@user) , class: "btn btn btn-info" %> 
 

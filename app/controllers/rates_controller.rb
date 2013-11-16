@@ -1,18 +1,16 @@
 class RatesController < ApplicationController
+
+  before_filter :chk_admin
+
   # GET /rates
   # GET /rates.json
   def index
-    if is_admin?
     @seasons = Season.all
     @rates = Rate.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @rates }
     end
-   else
-     redirect_to signin_path,  notice: "Please sign in as admin!"
-   end
-   
   end
 
   # GET /rates/1
@@ -85,4 +83,14 @@ class RatesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def chk_admin
+    if is_admin?
+    else
+       redirect_to signin_path,  notice: "Please sign in as admin!"
+    end
+  end
+
 end

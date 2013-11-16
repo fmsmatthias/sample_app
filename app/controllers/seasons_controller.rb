@@ -1,4 +1,7 @@
 class SeasonsController < ApplicationController
+
+before_filter :chk_admin
+
   # GET /seasons
   # GET /seasons.json
   def index
@@ -80,4 +83,14 @@ class SeasonsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+ private
+
+  def chk_admin
+    if is_admin?
+    else
+      redirect_to signin_path,  notice: "Please sign in as admin!"
+    end
+  end
+
 end

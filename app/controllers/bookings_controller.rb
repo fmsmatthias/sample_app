@@ -1,5 +1,14 @@
 class BookingsController < ApplicationController
 
+  def index
+    @user = User.find(params[:user_id])
+    @booking  = Booking.where(user_id: params[:user_id])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @seasons }
+    end
+  end
+
 def new
 @user=User.find_by_id(params[:user_id])
 @booking=Booking.new
@@ -36,6 +45,14 @@ end
        render 'edit'
     end
   end
-
+#50
+  def destroy
+    @user    = User.find_by_id(params[:user_id])
+    @booking = Booking.find_by_id(params[:id])
+    if @booking.destroy
+      flash[:success] = "Booking has been deleted!"
+      redirect_to @user
+    end
+  end
 
 end

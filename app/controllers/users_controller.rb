@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @title = @user.name
     @address = Address.find_by_user_id(@user.id)
     @ustatus = Ustatus.where("user_id=?", @user.id)
-    @booking = Booking.find_by_user_id(@user.id)
+    @booking = Booking.where(user_id: @user.id).last
  end
 
    def index

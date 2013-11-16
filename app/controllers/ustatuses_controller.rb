@@ -1,5 +1,7 @@
 class UstatusesController < ApplicationController
 
+before_filter :chk_admin
+
 def index
 @ustatuses = Ustatus.all
 end
@@ -42,8 +44,14 @@ end
     end
   end
 
+ private
 
-
+  def chk_admin
+    if is_admin?
+    else
+      redirect_to(signin_path)
+    end
+  end
 
 end
 

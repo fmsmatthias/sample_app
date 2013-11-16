@@ -19,15 +19,16 @@ $(document).ready(function(){
         <table id="pages" cellpadding="0" cellspacing="0" border="0" class="table table-bordered">
           <thead>
             <tr>
-              <th width="100">Last Name</th>
-              <th width="100">First Name</th>
-              <th>            Arrival</th>
+              <th width="100">            Last Name</th>
+              <th width="100">            First Name</th>
+              <th width="100">            Email</th>
+              <th>                        Arrival</th>
               <th width="070">            Departure</th>
               <th width="060">            Nights</th>
-	      <th>            Price</th>
+	      <th>                        Price</th>
               <th width="070">            Cleaning</th>
               <th width="080">            Dwnpymnt</th>
-              <th>            Goto</th>
+              <th>                        Goto</th>
             </tr>
           </thead> 
           <tbody>
@@ -35,10 +36,10 @@ $(document).ready(function(){
               <tr>
                 <td><%= booking.lname =%></td>
                 <td><%= booking.fname =%></td>
+                <td><%= booking.user.email =%></td>
                 <td><%= booking.adate =%></td>
                 <td><%= booking.ddate =%></td>
                 <td><%= booking.nights =%></td>
-                
                 <td><%= number_to_currency(booking.price, :unit => "€") =%></td>
                 <td><%= number_to_currency(booking.cleaning, :unit => "€")  =%></td>
                 <td><%= number_to_currency(booking.downp, :unit => "€")  =%></td>

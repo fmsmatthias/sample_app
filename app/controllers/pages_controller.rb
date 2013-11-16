@@ -33,29 +33,33 @@ class PagesController < ApplicationController
 
   def booking_list
     if is_admin?
-      @names = Address.order("lname")
+#todo: change order of loops
+      @names = Address.all
       @booklist = []  
       @names.each do |name|
+      @bookings = Booking.where("user_id=?", name.user_id)
+      @bookings.each do |booking|
         book = Blist.new
-        bdet = Booking.find_by_user_id(name.user_id)
-        if not bdet.nil?
-          book.fname = name.fname
-          book.lname = name.lname
-          if not bdet.adate.nil?
-            book.adate = bdet.adate.strftime("%Y.%m.%d")
+         bdet = booking
+          if not bdet.nil?
+            book.fname = name.fname
+            book.lname = name.lname
+            if not bdet.adate.nil?
+              book.adate = bdet.adate.strftime("%Y.%m.%d")
+            end
+            if not bdet.ddate.nil?
+              book.ddate = bdet.ddate.strftime("%Y.%m.%d")
+            end
+#           book.adate = bdet.adate
+#           book.ddate = bdet.ddate
+            book.nights = bdet.nights
+            book.people = bdet.people
+            book.cleaning = bdet.cleaning
+            book.price = bdet.price
+            book.downp = bdet.downp
+            book.user  = User.find_by_id(name.user_id)
+            @booklist += [book]      
           end
-          if not bdet.ddate.nil?
-            book.ddate = bdet.ddate.strftime("%Y.%m.%d")
-          end
-#         book.adate = bdet.adate
-#         book.ddate = bdet.ddate
-          book.nights = bdet.nights
-          book.people = bdet.people
-          book.cleaning = bdet.cleaning
-          book.price = bdet.price
-          book.downp = bdet.downp
-          book.user  = User.find_by_id(name.user_id)
-          @booklist += [book]      
         end
       end
     else

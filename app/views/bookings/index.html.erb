@@ -1,0 +1,29 @@
+<h2><strong>All Bookings for <%= @user.name %> </h2></strong>
+
+
+<table>
+  <tr>
+    <th>Arrival Date</th>
+    <th>Departure Date</th>
+    <th>Number of Nights</th>
+    <th>Number of People</th>
+    <th>Total Price</th>
+    <th></th>
+  </tr>
+
+ <% @booking.each do |booking| %>
+  <tr>
+    <td><%= booking.adate %></td>
+    <td><%= booking.ddate %></td>
+    <td><%= booking.nights %></td>
+    <td><%= booking.people %></td>
+    <td><%= booking.price %></td>
+    <td><%= link_to 'Destroy', user_booking_path(@user.id,booking.id), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+ <% end %>
+
+</table>
+
+<br/>
+<%= link_to 'Back', @user %>
+

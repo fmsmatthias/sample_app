@@ -1,4 +1,7 @@
 class StatusvaluesController < ApplicationController
+
+before_filter :chk_admin
+
   # GET /statusvalues
   # GET /statusvalues.json
   def index
@@ -80,4 +83,14 @@ class StatusvaluesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+ private
+
+  def chk_admin
+    if is_admin?
+    else
+      redirect_to(signin_path)
+    end
+  end
+
 end
