@@ -32,7 +32,8 @@ class PagesController < ApplicationController
   end
 
   def booking_list
-    if is_admin?
+    if is_admin? or
+       is_group1?
 #todo: change order of loops
       @names = Address.all
       @booklist = []  

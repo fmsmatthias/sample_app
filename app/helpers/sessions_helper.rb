@@ -83,6 +83,19 @@ module SessionsHelper
      end
     end
   end
+
+  def is_group1?
+    if current_user.nil?
+      false 
+    else
+     group1 = Admin.find_by_user_id(current_user.id) 
+     if group1.nil?
+       false
+     else
+     group1.group1 == true
+     end
+    end
+  end
   
   def sign_out
     cookies.delete(:remember_token)
