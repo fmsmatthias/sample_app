@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 ruby '1.9.2'
-'rails_12factor'
 gem 'rails', '3.2.11'
 gem 'bootstrap-sass', '2.0.0'
 gem 'pg'
@@ -12,7 +11,7 @@ group :development do
 end
 
 group :test do
-#  gem 'rspec-rails', '2.6.1'
+  gem 'rspec-rails', '2.6.1'
   gem 'webrat', '0.7.1'
 end
 
