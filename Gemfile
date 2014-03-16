@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '1.9.2'
+'rails_12factor'
 gem 'rails', '3.2.11'
 gem 'bootstrap-sass', '2.0.0'
 gem 'pg'
