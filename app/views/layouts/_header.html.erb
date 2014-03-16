@@ -35,7 +35,7 @@
                 </ul>
               </li>
             <% end %>
-            <% if is_group1? %>
+            <% if is_admin? %>
               <li><%= link_to "List all bookings", booking_list_path %></li>
             <% end %>
             <li id="fat-menu" class="dropdown">
