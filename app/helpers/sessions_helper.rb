@@ -83,7 +83,7 @@ module SessionsHelper
      end
     end
   end
-
+ 
   def is_group1?
     if current_user.nil?
       false 
